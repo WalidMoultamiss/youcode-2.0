@@ -1,4 +1,3 @@
 export const About = () => {
-    console.log("abouuuuuuuuuuuuut page");
-    document.querySelector('#ctn').innerHTML = 'about'
+    document.querySelector('#ctn').innerHTML = 'about Page'
 }
