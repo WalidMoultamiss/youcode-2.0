@@ -1,0 +1,17 @@
+{
+  "name": "youcode-2.0",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "vite": "^2.6.4"
+  },
+  "dependencies": {
+    "tailwindcss": "^2.2.19"
+  }
+}
