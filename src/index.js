@@ -1,10 +1,10 @@
 import { } from './classes'
 import { } from './helpers'
 import { } from './components'
-import { Home } from './pages'
+import pages from './pages'
 
 
 
-export {
-  Home
+export  {
+  pages
 }

@@ -1,4 +1,4 @@
-console.log("abouuuuuuuuuuuuut page");
-
-
-document.querySelector('#app').innerHTML='about'
+export const About = () => {
+    console.log("abouuuuuuuuuuuuut page");
+    document.querySelector('#ctn').innerHTML = 'about'
+}

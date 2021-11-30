@@ -1,3 +1,5 @@
-console.log("we are in home bitchhhhhhhh");
+export const Home = () => {
+    console.log("we are in home bitchhhhhhhh");
 
-document.querySelector('#app').innerHTML='home'
+    document.querySelector('#ctn').innerHTML = 'home'
+}
