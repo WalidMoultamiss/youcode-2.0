@@ -1,5 +1,4 @@
-import './style.css'
-import "tailwindcss/tailwind.css"
+export const app = {}
 
 document.querySelector('#app').innerHTML = `
   <h1 class="text-red-300">Hello Vite!</h1>
