@@ -1,6 +1,7 @@
 import './style.css'
 import "tailwindcss/tailwind.css"
-import {app} from './src/index.js'
+import { render } from "./src/helpers"
 
+const path = window.location.pathname.replace('/', "");
 
-console.log('app');
+path ? render(path) : ""

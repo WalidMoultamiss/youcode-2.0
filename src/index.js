@@ -1,6 +1,10 @@
-export const app = {}
+import { } from './classes'
+import { } from './helpers'
+import { } from './components'
+import { Home } from './pages'
 
-document.querySelector('#app').innerHTML = `
-  <h1 class="text-red-300">Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+
+
+export {
+  Home
+}
