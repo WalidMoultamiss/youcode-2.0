@@ -5,6 +5,6 @@ export const Home = () => {
         <h1>Home page</h1>
         ${inscription()}
         ${btn('add new btn','p-3 rounded-lg hover:bg-blue-500 hover:text-white')}
-        
+
     `
 }
