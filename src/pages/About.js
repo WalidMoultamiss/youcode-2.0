@@ -1,3 +1,15 @@
-export const About = () => {
-    document.querySelector('#ctn').innerHTML = 'about Page'
-}
+export const About = () => (`
+        <h1>About page</h1>
+        <button
+        class="bg-green-700 p-3 rounded-md outline-none text-white"
+        onclick="goTo('home')"
+        >
+            Home
+        </button>
+        <button
+            class="bg-green-700 p-3 rounded-md outline-none text-white"
+            onclick="goTo('about')"
+        >
+            About
+      </button>
+      `)

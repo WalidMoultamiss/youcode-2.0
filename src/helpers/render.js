@@ -1,3 +1,3 @@
 export const render = (page) => {
-    page.page()
+    document.querySelector('#app').innerHTML = page.page()
 }
