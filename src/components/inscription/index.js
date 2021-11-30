@@ -1,12 +1,18 @@
 //import btn
 import { btn } from '../../components';
 
+
 export const inscription = () => {
-  return `
-            <div class="container">
+
+    window.allo = () => document.querySelector('#emailAdress').addEventListener('click', () => {
+        console.log("allo");
+    })
+
+    return `
+            <div class="container" id="inscr">
                 <div class="form-signin p-3 gap-2 flex flex-col w-96 rounded-lg shadow-md">
                     <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
-                    <div class="form-label-group">
+                    <div class="form-label-group" id="emailAdress" onclick="allo()">
                         <label for="inputEmail" class="sr-only">Email address</label>
                         <input type="email" id="inputEmail" class="form-control p-2 shadow-md w-[80%] rounded-md outline-none" placeholder="Email address" required autofocus>
                     </div>
@@ -19,7 +25,7 @@ export const inscription = () => {
                             <input type="checkbox" value="remember-me"> Remember me
                         </label>
                     </div>
-                    ${btn('sign in','p-3 rounded-lg')}
+                    ${btn('sign in', 'p-3 rounded-lg')}
                     <p class="mt-5 mb-3 text-muted">&copy; 2021-2022</p>
                 </div>
             </div>
