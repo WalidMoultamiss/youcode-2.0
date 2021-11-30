@@ -1,0 +1,1 @@
+export { inscription } from './inscription';
