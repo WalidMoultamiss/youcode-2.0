@@ -1,4 +1,7 @@
+const db = "http://localhost:5000"
+
 export const get = async (url, token) => {
+    url = db + url
     const response = await fetch(url, {
         method: "GET",
         headers: {
@@ -10,6 +13,7 @@ export const get = async (url, token) => {
 };
 
 export const post = async (url, body, token) => {
+    url = db + url
     const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -22,6 +26,7 @@ export const post = async (url, body, token) => {
 };
 
 export const put = async (url, body, token) => {
+    url = db + url
     const response = await fetch(url, {
         method: "PUT",
         headers: {
