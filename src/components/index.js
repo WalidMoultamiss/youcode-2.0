@@ -1,1 +1,2 @@
-export { inscription } from './inscription';
+export {inscription}  from './inscription';
+export {btn} from './btn';
