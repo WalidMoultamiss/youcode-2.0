@@ -8,7 +8,7 @@ export const inscription = () => {
   const btnReset = document.querySelector("#btnReset");
   const btnClose = document.querySelector("#btnClose");
 
-  
+
 
   //check IF EMAIL is not register
   window.checkEmail = async () => {
@@ -41,15 +41,14 @@ export const inscription = () => {
       cin.value !== "" &&
       telephone.value !== ""
     ) {
-      const response = await post("/schema", {
+      let userData = {
         email: email.value,
         fullName: fullname.value,
         cin: cin.value,
         telephone: telephone.value,
         password: password,
-      });
-      localStorage.setItem("email", email.value);
-      localStorage.setItem("password", password);
+      }
+      const response = await _.addUser(userData)
       email.value = "";
       fullname.value = "";
       cin.value = "";

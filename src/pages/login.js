@@ -1,9 +1,31 @@
+import { popup } from "../components";
+
 export const login = () => {
   //get info from local storage
   const user = {
     email: localStorage.getItem("email"),
     password: localStorage.getItem("password"),
   };
+
+  //loginFunction
+    window.loginFunction = async () => {
+        const email =document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        
+
+        if(email!= '' && password!= ''){
+            const response = await _.login(
+            {
+                email: email,
+                password: password,
+            })
+            if(!response){
+                document.getElementById("login-failed").style.display = "flex";
+            }else{
+                goTo("/test");
+            }
+    }
+}
 
   return `
         <div class="flex dark:bg-gray-900 flex-col items-center justify-center h-screen">
@@ -25,25 +47,26 @@ export const login = () => {
                     <label class="block text-gray-700 dark:text-white text-sm font-bold mb-2" for="email">
                         Email
                     </label>
-                    <input class="shadow appearance-none dark:bg-gray-600 border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" value="${user.email}">
+                    <input class="shadow appearance-none dark:bg-gray-600 border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" value="${user.email ? user.email : ''}">
                 </div>
                 <div class="mb-6">
                     <label class="block text-gray-700 dark:text-white text-sm font-bold mb-2" for="password">
                         Password
                     </label>
-                    <input class="shadow appearance-none border dark:bg-gray-600 border-red-500 rounded w-full py-2 px-3 text-gray-700 dark:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" value="${user.password}" type="password" placeholder="******************">
-                    <p class="text-red-500 text-xs italic">Please choose a password.</p>
+                    <input class="shadow appearance-none border dark:bg-gray-600  rounded w-full py-2 px-3 text-gray-700 dark:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" value="${user.password ? user.password :''}" type="password" placeholder="******************">
+                    <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
                 </div>
                 <div class="flex items-center justify-between">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                        Login
-                    </button>
-                    <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                    <a class="inline-block align-baseline font-bold text-sm text-red-500 hover:text-blue-800" href="#">
                         Forgot Password?
                     </a>
+                    <button onclick="loginFunction()" class=" bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                        Login
+                    </button>
                 </div>
                 </div>
             </div>
         </div>
+        ${popup('login failed','login-failed')}
       `;
 };
