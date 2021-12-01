@@ -2,11 +2,21 @@
 import Controller from '../../controllers';
 
 
-export const test1Question =async () => {
-    let __ = new Controller();
-    const questions = await __.getQuestions();
+export const test1Question =  () => {
+    
+    const questions = _.getQuestions();
     console.log(questions);
     return `
-        <h1 >Test 1 Question</h1>
+       ${
+        questions.forEach(element => {
+            `
+            <div class="question">
+                <div class="question-title">
+                    <h3>${element.email}</h3>
+                </div>
+            </div>
+            `
+        })
+       }
     `
 }

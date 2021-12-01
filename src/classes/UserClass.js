@@ -16,7 +16,6 @@ export class UserClass {
         return result
     }
 
-
     instription = async (data) => {
         const response = await post("/schema", data);
         this.user = response
