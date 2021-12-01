@@ -4,6 +4,12 @@ import { goTo, router, UserObj, render } from "../helpers";
 
 class Controller {
     constructor() {
+
+        window._ = this
+
+        //login onload
+        this.loginOnload()
+
         //render Header components
         this.updateHeader();
 
@@ -14,12 +20,29 @@ class Controller {
         router();
         goTo(location.pathname);
 
+        //get Data 
+
+
         //Our Global Router Link
         window.goTo = goTo;
+
     }
 
-    view = (page, data) => {
-        render(page, data);
+    loginOnload = async () => {
+        let email = localStorage.getItem("email");
+        let password = localStorage.getItem("password")
+        if (email, password) {
+            console.log("in");
+            let res = await this.login({ email, password })
+            if (!res) this.logout()
+        } else {
+            this.logout()
+        }
+    }
+
+    view = async () => {
+        await UserObj.getUsers()
+        return UserObj.users
     };
 
     addUser = async (UserData) => {
@@ -29,6 +52,15 @@ class Controller {
         localStorage.setItem("password", user.password);
         return user;
     };
+
+    logout = () => {
+        UserObj.user = {}
+        this.updateHeader()
+        localStorage.removeItem("email");
+        localStorage.removeItem("password");
+    };
+
+
 
     //login
     login = async (UserData) => {

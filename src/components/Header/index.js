@@ -11,10 +11,8 @@ export const header = (data) => {
 
     //logout remove email and password from local storage
     window.logout = () => {
-        _.updateHeader()
-        localStorage.removeItem("email");
-        localStorage.removeItem("password");
-        goTo("/");
+      _.logout()
+      goTo("/");
     };
 
     window.isLoggedIn = () => {
