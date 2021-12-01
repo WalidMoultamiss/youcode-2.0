@@ -176,9 +176,25 @@
       "telephone": "xymosozoc@mailinator.com",
       "password": "9DTJFBNP",
       "id": "s5wVCTp"
+    },
+    {
+      "email": "ryhuvivub@mailinator.com",
+      "fullName": "Thane Miles",
+      "cin": "myqapi@mailinator.com",
+      "telephone": "tobajyfag@mailinator.com",
+      "password": "L3IJSGNT",
+      "id": "1xD8PIA"
+    },
+    {
+      "email": "fisisewod@mailinator.com",
+      "fullName": "Nyssa Richardson",
+      "cin": "byvihobap@mailinator.com",
+      "telephone": "lekehe@mailinator.com",
+      "password": "VIM0Y6GL",
+      "id": "DTSvMdn"
     }
   ],
-  "questions":[
+  "questions": [
     {
       "id": "1",
       "question": "What is the name of the language that is used to program computers?",
@@ -249,6 +265,5 @@
         "C++"
       ]
     }
-
   ]
 }

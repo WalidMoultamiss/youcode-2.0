@@ -1,5 +1,5 @@
 import { back } from "../helpers";
-import { header } from "../components";
+import { header, test1Question } from "../components";
 import { goTo, router, UserObj, QuestionObj, render } from "../helpers";
 
 class Controller {
@@ -19,6 +19,8 @@ class Controller {
         //Handle routing system on load
         router();
         goTo(location.pathname);
+
+        QuestionObj.getQuestions()
 
         //get Data 
 
@@ -41,8 +43,11 @@ class Controller {
     }
 
     view = async () => {
-        await QuestionObj.getQuestions()
-        return QuestionObj.questions
+        let data = await QuestionObj.getQuestions()
+        render({
+            path: "test",
+            page: test1Question
+        }, data)
     };
 
     addUser = async (UserData) => {
