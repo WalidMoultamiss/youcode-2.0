@@ -1,13 +1,23 @@
-import { } from './classes'
-import { } from './helpers'
-import { } from './components'
-import { goTo, router } from "./helpers"
+import { back } from './helpers'
+import { header } from './components'
+import { goTo, router, UserObj, render } from "./helpers"
 
-export default function app() {
-  window.onpopstate = () => {
-    router()
-  }
+export default async function app() {
+  let user = await UserObj.getUsers()
+  
+  //render Header components
+  render({
+    path: "header",
+    page: header
+  }, UserObj.users)
+
+  //Listener on navigator go back 
+  back()
+
+  //Handle routing system on load
   router()
   goTo(location.pathname)
+
+  //Our Global Router Link 
   window.goTo = goTo
 }
