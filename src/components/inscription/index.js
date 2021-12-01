@@ -1,6 +1,6 @@
 //import btn
 import { btn, popup } from "../../components";
-import { get, post } from "../../helpers";
+import { get, goTo, post } from "../../helpers";
 
 export const inscription = () => {
   const form = document.querySelector("#form");
@@ -15,6 +15,7 @@ export const inscription = () => {
     const email = document.querySelector("#email");
     const emailValue = email.value;
     const response = await get("/schema?email=" + emailValue);
+
 
     if (response.length > 0) {
       console.log("email exist");
@@ -54,6 +55,8 @@ export const inscription = () => {
       telephone.value = "";
       console.log(response);
       document.querySelector("#popup_submited").style.display = "flex";
+      //save email and password in localStorage
+      goTo("/login");
       console.log("email not exist");
       return true;
     } else {
@@ -102,7 +105,7 @@ export const inscription = () => {
                     <div class="w-full"  onclick="checkEmail()">
                         ${btn("sign in", "p-3 rounded-lg w-full")}
                     </div>
-                    <p class="mt-5 mb-3 text-muted ">&copy; 2021-2022</p>
+                    <p class="mt-5 dark:text-white mb-3 text-muted ">&copy; 2021-2022</p>
                 </div>
                 </div>
             </div>

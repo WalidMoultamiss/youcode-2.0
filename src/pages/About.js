@@ -1,3 +1,5 @@
+import { terminalUI } from "../components"
+
 export const About = () => (`
         <h1>About page</h1>
         <button
@@ -12,4 +14,5 @@ export const About = () => (`
         >
             About
       </button>
+      <!-- ${terminalUI()} -->
       `)

@@ -27,6 +27,8 @@ class Controller {
     addUser = async (UserData) => {
         let user = await UserObj.instription(UserData)
         this.updateHeader()
+        localStorage.setItem('email', user.email)
+        localStorage.setItem('password', user.password)
         return user
     }
 
@@ -35,7 +37,7 @@ class Controller {
         render({
             path: "header",
             page: header
-        }, UserObj.user )
+        }, UserObj.user)
     }
 
 }
