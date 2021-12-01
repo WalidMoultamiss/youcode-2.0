@@ -1,33 +1,34 @@
 import { popup } from "../components";
+import { TestOnline } from '../Mout'
 
 export const login = () => {
-  //get info from local storage
-  const user = {
-    email: localStorage.getItem("email"),
-    password: localStorage.getItem("password"),
-  };
+    //get info from local storage
+    const user = {
+        email: localStorage.getItem("email"),
+        password: localStorage.getItem("password"),
+    };
 
-  //loginFunction
+    //loginFunction
     window.loginFunction = async () => {
-        const email =document.getElementById("email").value;
+        const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-        
 
-        if(email!= '' && password!= ''){
+
+        if (email != '' && password != '') {
             const response = await _.login(
-            {
-                email: email,
-                password: password,
-            })
-            if(!response){
+                {
+                    email: email,
+                    password: password,
+                })
+            if (!response) {
                 document.getElementById("login-failed").style.display = "flex";
-            }else{
-                goTo("/test");
+            } else {
+                TestOnline()
             }
+        }
     }
-}
 
-  return `
+    return `
         <div class="flex dark:bg-gray-900 flex-col items-center justify-center h-screen">
             <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg ">
                 <div class="w-full p-3">
@@ -53,7 +54,7 @@ export const login = () => {
                     <label class="block text-gray-700 dark:text-white text-sm font-bold mb-2" for="password">
                         Password
                     </label>
-                    <input class="shadow appearance-none border dark:bg-gray-600  rounded w-full py-2 px-3 text-gray-700 dark:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" value="${user.password ? user.password :''}" type="password" placeholder="******************">
+                    <input class="shadow appearance-none border dark:bg-gray-600  rounded w-full py-2 px-3 text-gray-700 dark:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" value="${user.password ? user.password : ''}" type="password" placeholder="******************">
                     <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
                 </div>
                 <div class="flex items-center justify-between">
@@ -67,6 +68,6 @@ export const login = () => {
                 </div>
             </div>
         </div>
-        ${popup('login failed','login-failed')}
+        ${popup('login failed', 'login-failed')}
       `;
 };
