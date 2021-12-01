@@ -41,8 +41,8 @@ class Controller {
     }
 
     view = async () => {
-        await UserObj.getUsers()
-        return UserObj.users
+        await QuestionObj.getQuestions()
+        return QuestionObj.questions
     };
 
     addUser = async (UserData) => {

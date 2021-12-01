@@ -2,21 +2,10 @@
 import Controller from '../../controllers';
 
 
-export const test1Question =  () => {
-    
-    const questions = _.getQuestions();
+export const test1Question = async (questions) => {
     console.log(questions);
-    return `
-       ${
-        questions.forEach(element => {
-            `
-            <div class="question">
-                <div class="question-title">
-                    <h3>${element.email}</h3>
-                </div>
-            </div>
-            `
-        })
-       }
-    `
+    let html = await questions.map(element => (`<h3>${element.question}</h3>`)).join('')
+    console.log(html);
+    if (questions) questions.map(element => (`<h3>${element.question}</h3>`)).join('')
+    return "no"
 }
