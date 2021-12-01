@@ -1,13 +1,61 @@
 {
-    "schema": [
-        {
-            "id":"zegzjed",
-            "firstName":"zegzjed",
-            "lastName":"zegzjed",
-            "email":"qsdqsd@gmail.com",
-            "password":"87987987987",
-            "dateOfBirth":"12/12/12",
-            "phone":"87987987987"
-        }
-    ]
+  "schema": [
+    {
+      "id": "zegzjed",
+      "fullName": "youssef bakkori",
+      "cin": "4SDF54",
+      "email": "qsdqsd@gmail.com",
+      "password": "87987987987",
+      "dateOfBirth": "12/12/12",
+      "phone": "87987987987"
+    },
+    {
+      "email": "karimbaggari@gmail.com",
+      "fullName": "dssd",
+      "cin": "BM40199",
+      "telephone": "qsdsq",
+      "password": "XZBQSU7C",
+      "id": "3n_zNQl"
+    },
+    {
+      "email": "karimbaggarid@gmail.com",
+      "fullName": "qsdqsd",
+      "cin": "qsd",
+      "telephone": "qsd",
+      "password": "ZN1S3POB",
+      "id": "TbeN1pm"
+    },
+    {
+      "email": "user@email.com",
+      "fullName": "sdsd",
+      "cin": "BM40199",
+      "telephone": "qsdsq",
+      "password": "NZQTQV2R",
+      "id": "uzJgUTe"
+    },
+    {
+      "email": "walidmoultamis@gmail.com",
+      "fullName": "sdsd",
+      "cin": "BM40199",
+      "telephone": "qsdsq",
+      "password": "SD1IE8A9",
+      "id": "Y0Hgd9O"
+    },
+    {
+      "email": "Ahmedsabika@gmail.com",
+      "fullName": "sdsd",
+      "cin": "BM40199",
+      "telephone": "qsdsq",
+      "password": "6NXE5U0Y",
+      "id": "oXxvYrZ"
+    },
+    {
+      "email": "walidmodultamis@gmail.com",
+      "fullName": "sdsd",
+      "cin": "sd",
+      "telephone": "sd",
+      "password": "AG4B8TLR",
+      "id": "xReRt82"
+    }
+  ]
 }

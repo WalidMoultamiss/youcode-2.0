@@ -12,14 +12,13 @@ export const get = async (url, token) => {
     return await response.json()
 };
 
-export const post = async (url, body, token) => {
+export const post = async (url, body) => {
     url = db + url
     const response = await fetch(url, {
         method: "POST",
         headers: {
-            "accept": "application/json",
-            "Authorization": `Bearer ${token}`,
-        },
+            "Content-type": "application/json",
+          },
         body: JSON.stringify(body)
     });
     return await response.json()
