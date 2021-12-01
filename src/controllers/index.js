@@ -1,10 +1,10 @@
 import { back } from "../helpers";
 import { header } from "../components";
-import { goTo, router, UserObj, render } from "../helpers";
+import { goTo, router, UserObj, QuestionObj, render } from "../helpers";
 
 class Controller {
   constructor() {
-      //render Header components
+    //render Header components
     this.updateHeader();
 
     //Listener on navigator go back
@@ -43,7 +43,6 @@ class Controller {
       } else {
         return false;
       }
-
     }
   };
 
@@ -56,6 +55,12 @@ class Controller {
       },
       UserObj.user
     );
+  };
+
+  //get quetions
+  getQuestions = async () => {
+    let questions = await QuestionObj.getQuestions();
+    return questions;
   };
 }
 

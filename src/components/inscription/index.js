@@ -8,8 +8,6 @@ export const inscription = () => {
   const btnReset = document.querySelector("#btnReset");
   const btnClose = document.querySelector("#btnClose");
 
-
-
   //check IF EMAIL is not register
   window.checkEmail = async () => {
     const email = document.querySelector("#email");

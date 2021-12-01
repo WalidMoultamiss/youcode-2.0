@@ -145,5 +145,78 @@
       "password": "STWCENYC",
       "id": "jStoUqA"
     }
+  ],
+  "questions":[
+    {
+      "id": "1",
+      "question": "What is the name of the language that is used to program computers?",
+      "answer": "JavaScript",
+      "category": "Computer Science",
+      "difficulty": "easy",
+      "type": "multiple",
+      "correct_answer": "JavaScript",
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "C++"
+      ]
+    },
+    {
+      "id": "2",
+      "question": "What is the name of the language that is used to program mobile phones?",
+      "answer": "Java",
+      "category": "Computer Science",
+      "difficulty": "easy",
+      "type": "multiple",
+      "correct_answer": "Java",
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "C++"
+      ]
+    },
+    {
+      "id": "3",
+      "question": "What is the name of the language that is used to program websites?",
+      "answer": "HTML",
+      "category": "Computer Science",
+      "difficulty": "easy",
+      "type": "multiple",
+      "correct_answer": "HTML",
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "C++"
+      ]
+    },
+    {
+      "id": "4",
+      "question": "What is the name of the language that is used to program games?",
+      "answer": "JavaScript",
+      "category": "Computer Science",
+      "difficulty": "easy",
+      "type": "multiple",
+      "correct_answer": "JavaScript",
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "C++"
+      ]
+    },
+    {
+      "id": "5",
+      "question": "What is the name of the language that is used to program websites?",
+      "answer": "HTML",
+      "category": "Computer Science",
+      "difficulty": "easy",
+      "type": "multiple",
+      "correct_answer": "HTML",
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "C++"
+      ]
+    }
+
   ]
 }
