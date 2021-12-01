@@ -11,6 +11,7 @@ export const header = (data) => {
 
     //logout remove email and password from local storage
     window.logout = () => {
+        _.updateHeader()
         localStorage.removeItem("email");
         localStorage.removeItem("password");
         goTo("/");
@@ -46,22 +47,20 @@ export const header = (data) => {
                         </span>
                     </div>
                     <div class="flex justify-center">
-                        
-                    
                         <div class="flex gap-4 items-center">
                             <div class="text-sm">
-                                <p class="text-white uppercase text-sm font-semibold ">${user.email ? user.fullName : 'username'
-        }</p>
+                                <p class="text-white uppercase text-sm font-semibold ">${user.email ? user.fullName : 'username'}</p>
                             </div>
-                            <img class="w-10 h-10 rounded-full mr-4" src="https://picsum.photos/200/300" alt="Avatar of Jonathan Reinink">
+                            <img class="w-10 h-10 rounded-full mr-4" src="https://picsum.photos/200/300" alt="Avatar of Youcode user">
                             <button onclick="toggleDarkMode()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
                                 dark
                             </button>
                             <div>
-                                <button onclick="goTo('/login')" class="${isLoggedIn() ? 'inline-block' : 'hidden'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">login</button>
-                                <button onclick="logout()" class=" ${!isLoggedIn() ? 'inline-block' : 'hidden'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Logout</button>
+                                <button onclick="goTo('/login')" class="${!isLoggedIn() ? 'inline-block' : 'hidden'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">login</button>
+                                <button onclick="logout()" class=" ${!isLoggedIn() ? 'hidden' : 'inline-block'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Logout</button>
                             </div>
                         </div>
+
         </div>
     `;
 };

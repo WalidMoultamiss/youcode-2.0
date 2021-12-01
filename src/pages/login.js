@@ -1,49 +1,72 @@
-
-
-
+import { popup } from "../components";
 
 export const login = () => {
-    //get info from local storage
-    const user = {
-        email: localStorage.getItem('email'),
-        password: localStorage.getItem('password')
+  //get info from local storage
+  const user = {
+    email: localStorage.getItem("email"),
+    password: localStorage.getItem("password"),
+  };
+
+  //loginFunction
+    window.loginFunction = async () => {
+        const email =document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        
+
+        if(email!= '' && password!= ''){
+            const response = await _.login(
+            {
+                email: email,
+                password: password,
+            })
+            if(!response){
+                document.getElementById("login-failed").style.display = "flex";
+            }else{
+                goTo("/test");
+            }
     }
+}
 
-
-
-
-    return (`
-        <div class="flex flex-col items-center justify-center h-screen">
-            <div class="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
+  return `
+        <div class="flex dark:bg-gray-900 flex-col items-center justify-center h-screen">
+            <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg ">
+                <div class="w-full p-3">
+                    <div class="flex justify-start gap-3 items-center">
+                        <div class="p-2 rounded-full cursor-pointer bg-red-600"></div>
+                        <div class="p-2 rounded-full cursor-pointer bg-yellow-400"></div>
+                        <div class="p-2 rounded-full cursor-pointer bg-green-400" ></div>
+                        <input type="text" class="w-full bg-gray-200 outline-none p-1 text-xs px-3 rounded-lg" id="url" placeholder="url" value="https://www.youcode2.ma">
+                    </div>
+                </div>
+                <hr/>
+            <div class="px-8 pt-6 pb-8 mb-4">
                 <div class="mb-4">
-                    <h1 class="text-2xl font-bold text-center">Login</h1>
+                    <h1 class="text-2xl font-bold dark:text-white text-center">Login</h1>
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                    <label class="block text-gray-700 dark:text-white text-sm font-bold mb-2" for="email">
                         Email
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" value="${user.email}">
+                    <input class="shadow appearance-none dark:bg-gray-600 border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" value="${user.email ? user.email : ''}">
                 </div>
                 <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    <label class="block text-gray-700 dark:text-white text-sm font-bold mb-2" for="password">
                         Password
                     </label>
-                    <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" 
-                        id="password" 
-                        value="${user.password}" 
-                        type="password" 
-                        placeholder="******************">
-                    <p class="text-red-500 text-xs italic">Please choose a password.</p>
+                    <input class="shadow appearance-none border dark:bg-gray-600  rounded w-full py-2 px-3 text-gray-700 dark:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" value="${user.password ? user.password :''}" type="password" placeholder="******************">
+                    <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
                 </div>
                 <div class="flex items-center justify-between">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                        Login
-                    </button>
-                    <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                    <a class="inline-block align-baseline font-bold text-sm text-red-500 hover:text-blue-800" href="#">
                         Forgot Password?
                     </a>
+                    <button onclick="loginFunction()" class=" bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                        Login
+                    </button>
+                </div>
                 </div>
             </div>
         </div>
-      `)
-}
+        ${popup('login failed','login-failed')}
+      `;
+};
