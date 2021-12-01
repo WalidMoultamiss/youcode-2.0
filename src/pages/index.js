@@ -1,5 +1,6 @@
 import { Home } from './Home'
 import { About } from './About'
+import {login} from './login'
 
 
 
@@ -17,8 +18,8 @@ let pages = [
     path: "About"
   },
   {
-    page: About,
-    path: "allo"
+    page: login,
+    path: "login"
   }
 ]
 
