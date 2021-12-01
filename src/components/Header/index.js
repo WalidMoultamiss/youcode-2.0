@@ -11,8 +11,8 @@ export const header = (data) => {
 
     //logout remove email and password from local storage
     window.logout = () => {
-      _.logout()
-      goTo("/");
+        _.logout()
+        goTo("/");
     };
 
     window.isLoggedIn = () => {
@@ -42,6 +42,9 @@ export const header = (data) => {
                         </span>
                         <span onclick="goTo('about')" class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                             About
+                        </span>
+                        <span onclick="goTo('online')" class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                            Test
                         </span>
                     </div>
                     <div class="flex justify-center">
