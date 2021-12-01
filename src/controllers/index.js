@@ -1,5 +1,5 @@
 import { back } from "../helpers";
-import { header, test1Question } from "../components";
+import { header } from "../components";
 import { goTo, router, UserObj, QuestionObj, render } from "../helpers";
 
 class Controller {
@@ -43,12 +43,14 @@ class Controller {
     }
 
     view = async () => {
-        let data = await QuestionObj.getQuestions()
-        render({
-            path: "test",
-            page: test1Question
-        }, data)
+        await QuestionObj.getQuestions()
+        goTo('/alloo')
     };
+
+    Questions = () => {
+        return QuestionObj.questions
+
+    }
 
     addUser = async (UserData) => {
         let user = await UserObj.instription(UserData);
