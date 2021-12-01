@@ -15,10 +15,6 @@ let pages = [
   {
     page: About,
     path: "About"
-  },
-  {
-    page: About,
-    path: "allo"
   }
 ]
 
