@@ -34,7 +34,7 @@ export const header = (data) => {
                         <div class="flex gap-4 items-center">
                             <div class="text-sm">
                                 <p class="text-white uppercase text-sm font-semibold ">${
-                                  user ? user[0].fullName : null
+                                  user.email ? user.fullName : 'username'
                                 }</p>
                             </div>
                             <img class="w-10 h-10 rounded-full mr-4" src="https://picsum.photos/200/300" alt="Avatar of Jonathan Reinink">
