@@ -16,7 +16,7 @@ class Controller {
         router()
         goTo(location.pathname)
 
-        //Our Global Router Link 
+        //Our Global Functions 
         window.goTo = goTo
     }
 
