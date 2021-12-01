@@ -59,6 +59,7 @@ export const header = (data) => {
                             <div>
                                 <button onclick="goTo('/login')" class="${!isLoggedIn() ? 'inline-block' : 'hidden'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">login</button>
                                 <button onclick="logout()" class=" ${!isLoggedIn() ? 'hidden' : 'inline-block'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Logout</button>
+                                <button onclick="test().reset()" class=" text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Reset</button>
                             </div>
                         </div>
 

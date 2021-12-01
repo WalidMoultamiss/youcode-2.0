@@ -1,10 +1,10 @@
 import { back } from "../helpers";
 import { header } from "../components";
+import { TestOnline } from "../Mout";
 import { goTo, router, UserObj, QuestionObj, render } from "../helpers";
 
 class Controller {
     constructor() {
-
         window._ = this
 
         //login onload
@@ -37,19 +37,16 @@ class Controller {
             console.log("in");
             let res = await this.login({ email, password })
             if (!res) this.logout()
+            TestOnline()
         } else {
             this.logout()
         }
     }
 
-    view = async () => {
-        await QuestionObj.getQuestions()
-        goTo('/alloo')
-    };
+  
 
     Questions = () => {
         return QuestionObj.questions
-
     }
 
     addUser = async (UserData) => {
