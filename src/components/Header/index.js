@@ -1,30 +1,30 @@
 import { goTo } from "../../helpers";
 
 export const header = (data) => {
-  let user = data;
+    let user = data;
 
-  //onclick toggle drak mode tailwind
-  window.toggleDarkMode = () => {
-    const body = document.querySelector("body");
-    body.classList.toggle("dark");
-  };
+    //onclick toggle drak mode tailwind
+    window.toggleDarkMode = () => {
+        const body = document.querySelector("body");
+        body.classList.toggle("dark");
+    };
 
-  //logout remove email and password from local storage
-  window.logout = () => {
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
-    goTo("/");
-  };
+    //logout remove email and password from local storage
+    window.logout = () => {
+        localStorage.removeItem("email");
+        localStorage.removeItem("password");
+        goTo("/");
+    };
 
-  window.isLoggedIn = () => {
-    if (localStorage.getItem("email") && localStorage.getItem("password")) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+    window.isLoggedIn = () => {
+        if (localStorage.getItem("email") && localStorage.getItem("password")) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
-  return `
+    return `
         <div class="header">
             <nav id="nav" class="flex items-center justify-between flex-wrap dark:bg-red-900 bg-red-500 p-6">
                 <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -50,17 +50,16 @@ export const header = (data) => {
                     
                         <div class="flex gap-4 items-center">
                             <div class="text-sm">
-                                <p class="text-white uppercase text-sm font-semibold ">${
-                                  user.email ? user.fullName : 'username'
-                                }</p>
+                                <p class="text-white uppercase text-sm font-semibold ">${user.email ? user.fullName : 'username'
+        }</p>
                             </div>
                             <img class="w-10 h-10 rounded-full mr-4" src="https://picsum.photos/200/300" alt="Avatar of Jonathan Reinink">
                             <button onclick="toggleDarkMode()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
                                 dark
                             </button>
                             <div>
-                                <button onclick="goTo('/login')" class="${isLoggedIn() ? 'inline-block' :'hidden'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">login</button>
-                                <button onclick="logout()" class=" ${!isLoggedIn() ? 'inline-block' :'hidden'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Logout</button>
+                                <button onclick="goTo('/login')" class="${isLoggedIn() ? 'inline-block' : 'hidden'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">login</button>
+                                <button onclick="logout()" class=" ${!isLoggedIn() ? 'inline-block' : 'hidden'}  text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Logout</button>
                             </div>
                         </div>
         </div>

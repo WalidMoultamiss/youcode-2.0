@@ -48,7 +48,7 @@ export const inscription = () => {
         telephone: telephone.value,
         password: password,
       }
-      const response = await window.Falc0n.addUser(userData)
+      const response = await _.addUser(userData)
       email.value = "";
       fullname.value = "";
       cin.value = "";

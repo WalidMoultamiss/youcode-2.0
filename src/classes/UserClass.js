@@ -12,10 +12,10 @@ export class UserClass {
 
     instription = async (data) => {
         const response = await post("/schema", data);
-        console.log(response);
         this.user = response
         return response
     }
+
 }
 
 
