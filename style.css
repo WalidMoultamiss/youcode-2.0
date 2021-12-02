@@ -8,12 +8,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  
 }
 
-
 ::-webkit-scrollbar {
-  width: 1px;               /* width of the entire scrollbar */
+  width: 1px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -21,11 +19,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;        /* color of the tracking area */
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: blue;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 1px solid transparent;  /* creates padding around scroll thumb */
+  background-color: blue;
+  border-radius: 20px;
+  border: 1px solid transparent;
 }

@@ -136,19 +136,19 @@ export const QuestionDashboard = (questions) => {
                                             ID #
                                         </th>
                                         <th class="px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            CIN
+                                            QUESTION
                                         </th>
                                         <th class="px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            FULL NAME
+                                            ANSWER
                                         </th>
                                         <th class="px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            EMAIL
+                                            CATEGORY
                                         </th>
                                         <th class="px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            PHONE
+                                            DIFFICULTY
                                         </th>
                                         <th class="px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            BIRTHDAY
+                                            INCORRECT ANSWERS
                                         </th>
                                         <th class="px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                             Status
