@@ -3,6 +3,8 @@ import { Admin } from './Admin'
 import { login } from './login'
 import { online } from './online'
 import { viewRes } from './viewRes'
+import { seriousGame } from './seriousGame'
+import { motivation } from './motivation'
 
 
 
@@ -31,6 +33,14 @@ let pages = [
     page: viewRes,
     path: "viewRes"
   },
+  {
+    page: seriousGame,
+    path: "seriousgame"
+  },
+  {
+    page: motivation,
+    path: "motivation"
+  }
 
 ]
 
