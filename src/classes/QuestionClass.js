@@ -16,14 +16,14 @@ export class QuestionClass {
     user = user[0];
     UserObj.user.status = 'accepted';
     let test = [];
-    if(user.testOnline.length > 0) {
-        test = user.testOnline.find(item => item.isCorrect == false)
+    if (user.testOnline.length > 0) {
+      test = user.testOnline.find(item => item.isCorrect == false)
     }
     UserObj.user.testOnline = user.testOnline;
-    UserObj.user.status = test?.length === 0 ? 'not yet' : test ? 'rejected' :  'accepted';
-    await put(`/schema/${UserObj.id}`, UserObj.user);
+    UserObj.user.status = test?.length === 0 ? 'not yet' : test ? 'rejected' : 'accepted';
+    await put(`/schema/${UserObj.user.id}`, UserObj.user);
     return UserObj.user.status;
-    };
+  };
 
 
   setQuestion = async (question) => {
@@ -31,10 +31,10 @@ export class QuestionClass {
     const email = UserObj.user.email;
     let user = await get(`/schema/?email=${email}`);
     user = user[0];
-    let result = {error:"already answered"};
-    if(user?.testOnline.length < 5){
-    user.testOnline = [...user.testOnline, res];
-    result = await put(`/schema/${user.id}`, user);
+    let result = { error: "already answered" };
+    if (user?.testOnline.length < 5) {
+      user.testOnline = [...user.testOnline, res];
+      result = await put(`/schema/${user.id}`, user);
     }
     return result;
   };

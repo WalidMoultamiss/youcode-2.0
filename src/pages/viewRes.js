@@ -1,4 +1,4 @@
-export const viewRes = () => {
+export const viewRes = (user) => {
 
     const getRes = ()=>{
         const res =  _.viewResStat()

@@ -6,6 +6,14 @@ export const UserDashboard = (users) => {
             pending: "bg-gray-100 text-gray-800",
             rejected: "bg-pink-100 text-pink-800",
         }
+
+
+        window.checkUserAnswers = (id) => {
+            let user = dataUsers.find(user => user.id == id)
+            console.log(user);
+            goTo('viewres', user)
+        }
+
         const html = dataUsers?.reduce((output, user, id) => {
 
             return (output += (`
@@ -32,6 +40,19 @@ export const UserDashboard = (users) => {
                 <td class=" dark:border-gray-300 dark:text-white dark:bg-gray-900 px-5 py-5 border-b border-gray-200 bg-white text-sm leading-5 text-gray-500">
                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${colors[user.status]} ">
                         ${user.status}
+                    </span>
+                </td>
+                <td onclick="checkUserAnswers(${user.id})" class=" dark:border-gray-300 dark:text-white dark:bg-gray-900 px-5 py-5 border-b border-gray-200 bg-white text-sm leading-5 text-gray-500 cursor-pointer">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-300 text-black">
+                    <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle></svg>
                     </span>
                 </td>
             </tr>
@@ -72,6 +93,9 @@ export const UserDashboard = (users) => {
                                         </th>
                                         <th class=" dark:text-white dark:bg-gray-700 px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                             Status
+                                        </th>
+                                        <th class=" dark:text-white dark:bg-gray-700 px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                            check
                                         </th>
                                     </tr>
                                 </thead>
