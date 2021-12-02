@@ -5,6 +5,7 @@ import { online } from './online'
 import { viewRes } from './viewRes'
 import { seriousGame } from './seriousGame'
 import { motivation } from './motivation'
+import { register } from './register'
 
 
 
@@ -14,12 +15,13 @@ let pages = [
     path: "/"
   }, ,
   {
-    page: Home,
-    path: "Home"
+    page: register,
+    path: "register"
   },
   {
     page: Admin,
-    path: "admin"
+    path: "admin",
+    auth:true
   },
   {
     page: login,
@@ -27,19 +29,23 @@ let pages = [
   },
   {
     page: online,
-    path: "online"
+    path: "online",
+    auth:true
   },
   {
     page: viewRes,
-    path: "viewRes"
+    path: "viewRes",
+    auth:true
   },
   {
     page: seriousGame,
-    path: "seriousgame"
+    path: "seriousgame",
+    auth:true
   },
   {
     page: motivation,
-    path: "motivation"
+    path: "motivation",
+    auth:true
   }
 
 ]

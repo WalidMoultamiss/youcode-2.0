@@ -279,6 +279,48 @@
         }
       ],
       "id": 9
+    },
+    {
+      "email": "kezofelycy@mailinator.com",
+      "fullName": "Yael Huber",
+      "cin": "jusaqew@mailinator.com",
+      "telephone": "behiv@mailinator.com",
+      "password": "3RK3LHCO",
+      "dateOfBirth": "",
+      "status": "rejected",
+      "testOnline": [
+        {
+          "id": "1",
+          "answer": "Rust",
+          "isCorrect": false,
+          "correct": "C++"
+        },
+        {
+          "id": "1",
+          "answer": "C",
+          "isCorrect": false,
+          "correct": "C++"
+        },
+        {
+          "id": "1",
+          "answer": "Python",
+          "isCorrect": false,
+          "correct": "C++"
+        },
+        {
+          "id": "1",
+          "answer": "C",
+          "isCorrect": false,
+          "correct": "C++"
+        },
+        {
+          "id": "1",
+          "answer": "C",
+          "isCorrect": false,
+          "correct": "C++"
+        }
+      ],
+      "id": 10
     }
   ],
   "questions": [

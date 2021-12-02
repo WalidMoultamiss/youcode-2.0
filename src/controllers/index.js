@@ -1,13 +1,12 @@
 import { back } from "../helpers";
 import { header } from "../components";
-import { TestOnline, ref, AdminPage } from "../Mout";
+import { ref } from "../Mout";
 import { goTo, router, UserObj, QuestionObj, render } from "../helpers";
 
 class Controller {
     constructor() {
         window._ = this
         router();
-
 
         //Our Global Router Link
         window.goTo = goTo;
@@ -28,10 +27,6 @@ class Controller {
 
         QuestionObj.getQuestions()
 
-        //get Data 
-
-
-
     }
 
     loginOnload = async () => {
@@ -44,6 +39,7 @@ class Controller {
             this.handlePage(location.pathname.split('/').join(''))
         } else {
             this.logout()
+            goTo('register')
         }
     }
     handlePage = async (path) => {
@@ -51,9 +47,14 @@ class Controller {
         res ? res.func(true) : goTo(`/${path}`)
     }
 
-    viewResStat = ()=>{
+    viewResStat = () => {
         return UserObj.user
     }
+
+    isAuth = () => {
+        return UserObj.user
+    }
+
 
 
 
@@ -64,10 +65,10 @@ class Controller {
     validateQuestion = (question) => {
         return QuestionObj.validateQuestion(question)
     }
-    getResultTestOnline =()=>{
+    getResultTestOnline = () => {
         return QuestionObj.getResultTestOnline()
     }
-    
+
     setQuestion = async (question) => {
         return QuestionObj.setQuestion(question)
     }
