@@ -35,7 +35,7 @@ export const motivation = () => {
                 <br/>
         <textarea class="w-full rounded-md shadow-md bg-gray-600 p-3 border-2  outline-none dark:text-white h-28" id="textarea"></textarea>
         <div class="w-full flex justify-end">
-            <button class=" bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600" id="submit">
+            <button class=" bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600" id="submit" onclick="goTo('technique')">
                 Submit your answers
             </button>
         </div>

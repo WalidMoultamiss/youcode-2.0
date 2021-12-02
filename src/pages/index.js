@@ -5,6 +5,10 @@ import { online } from './online'
 import { viewRes } from './viewRes'
 import { seriousGame } from './seriousGame'
 import { motivation } from './motivation'
+import { technique } from './technique'
+import { C } from './C'
+import { js } from './js'
+import { python } from './python'
 
 
 
@@ -40,8 +44,23 @@ let pages = [
   {
     page: motivation,
     path: "motivation"
-  }
-
+  },
+  {
+    page: technique,
+    path: "technique"
+  },
+  {
+    page: C,
+    path: "c"
+  },
+  {
+    page: js,
+    path: "js"
+  },
+  {
+    page: python,
+    path: "python"
+  },
 ]
 
 
