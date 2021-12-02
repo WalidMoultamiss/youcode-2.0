@@ -15,10 +15,13 @@ export const header = (data) => {
         _.logout()
         goTo("/");
     };
-    //logout remove email and password from local storage
-    window.adminPage = () => {
-        AdminPage()
-    };
+
+
+    window.navigate = (type, where) => {
+        console.log(type, where);
+        window.clearAllTimeOutes()
+        type === 'link' ? goTo(where) : AdminPage()
+    }
 
     window.isLoggedIn = () => {
         if (localStorage.getItem("email") && localStorage.getItem("password")) {
@@ -42,13 +45,13 @@ export const header = (data) => {
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                     <div class="text-sm lg:flex-grow">
-                        <span onclick="goTo('home')" class="block cursor-pointer dark:text-gray-100 mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                        <span onclick="navigate('link','home')" class="block cursor-pointer dark:text-gray-100 mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                             Home
                         </span>
-                        <span onclick="adminPage()" class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                        <span onclick="navigate('admin','admin')" class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                             Admin
                         </span>
-                        <span onclick="goTo('online')" class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                        <span onclick="navigate('link','online') " class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                             Test
                         </span>
                     </div>

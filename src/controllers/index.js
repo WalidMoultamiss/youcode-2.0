@@ -8,9 +8,10 @@ class Controller {
         window._ = this
         router();
 
-        
+
         //Our Global Router Link
         window.goTo = goTo;
+        window.clearAllTimeOutes = this.clearAllTimeOutes;
 
 
         //login onload
@@ -56,7 +57,7 @@ class Controller {
         return QuestionObj.questions
     }
 
-    validateQuestion =(question)=>{
+    validateQuestion = (question) => {
         return QuestionObj.validateQuestion(question)
     }
 
@@ -104,6 +105,15 @@ class Controller {
             UserObj.user
         );
     };
+
+    clearAllTimeOutes = () => {
+        console.log("in");
+        var id = window.setTimeout(function () { }, 0);
+
+        while (id--) {
+            window.clearTimeout(id);
+        }
+    }
 }
 
 export default Controller;
