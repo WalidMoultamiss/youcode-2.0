@@ -51,6 +51,10 @@ class Controller {
         res ? res.func(true) : goTo(`/${path}`)
     }
 
+    viewResStat = ()=>{
+        return UserObj.user
+    }
+
 
 
     Questions = () => {
@@ -116,13 +120,11 @@ class Controller {
     };
 
     clearAllTimeOutes = () => {
-        console.log("in");
-        var id = window.setTimeout(function () { }, 0);
-
+        let id = window.setTimeout(() => { }, 0);
         while (id--) {
             window.clearTimeout(id);
-        }
-    }
+        };
+    };
 }
 
 export default Controller;

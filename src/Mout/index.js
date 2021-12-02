@@ -4,6 +4,10 @@ export const TestOnline = async () => {
     await QuestionObj.getQuestions()
     goTo('/online')
 };
+export const viewRes = async () => {
+    await QuestionObj.getQuestions()
+    goTo('/viewres')
+};
 
 export const AdminPage = async (switcher) => {
     console.log("from mouter :",switcher);
@@ -22,5 +26,9 @@ export const ref = [
     {
         path: "admin",
         func: AdminPage
+    },
+    {
+        path: "viewRes",
+        func: viewRes
     }
 ]

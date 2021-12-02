@@ -2,6 +2,7 @@ import { Home } from './Home'
 import { Admin } from './Admin'
 import { login } from './login'
 import { online } from './online'
+import { viewRes } from './viewRes'
 
 
 
@@ -25,7 +26,12 @@ let pages = [
   {
     page: online,
     path: "online"
-  }
+  },
+  {
+    page: viewRes,
+    path: "viewRes"
+  },
+
 ]
 
 
