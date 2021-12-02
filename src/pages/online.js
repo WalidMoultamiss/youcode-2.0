@@ -3,6 +3,7 @@ import { TestOnline } from "../Mout";
 export const online = () => {
   let data = _.Questions();
 
+<<<<<<< HEAD
   const clearAllTimeOutesBitches = () => {
     console.log("in");
     var id = window.setTimeout(function () { }, 0);
@@ -16,6 +17,13 @@ export const online = () => {
   const setInt = setTimeout(() => {
     test().next()
   }, 5000);
+=======
+  
+    const setInt = setTimeout(() => {
+
+      // test().next()
+    }, 5000);
+>>>>>>> 3a7c61db1c7547960e70af2b20abd74121d9405f
 
   //set the current test
   let testStep = localStorage.getItem("testStep")

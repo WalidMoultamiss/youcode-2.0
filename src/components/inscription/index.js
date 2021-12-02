@@ -69,7 +69,7 @@ export const inscription = () => {
     });
 
   return `
-            <div style="height:88vh;" class="w-full dark:bg-gray-900 flex justify-center items-center" id="inscr">
+            <div  class="w-full h-screen dark:bg-gray-900 flex justify-center items-center" id="inscr">
               <div>
                 <div class="form-signup p-3 gap-3  bg-white dark:bg-gray-700 flex flex-col w-96 rounded-lg shadow-2xl transition-all  hover:shadow-md">
                   <div class="w-full">
