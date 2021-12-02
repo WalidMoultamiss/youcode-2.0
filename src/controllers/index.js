@@ -60,6 +60,14 @@ class Controller {
     validateQuestion = (question) => {
         return QuestionObj.validateQuestion(question)
     }
+    getResultTestOnline =()=>{
+        return QuestionObj.getResultTestOnline()
+    }
+    
+    setQuestion = async (question) => {
+        return QuestionObj.setQuestion(question)
+    }
+
 
     addUser = async (UserData) => {
         let user = await UserObj.instription(UserData);
@@ -68,6 +76,7 @@ class Controller {
         localStorage.setItem("password", user.password);
         return user;
     };
+
 
     logout = () => {
         UserObj.user = {}
