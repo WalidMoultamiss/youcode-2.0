@@ -7,7 +7,38 @@
       "telephone": "qsdsq",
       "password": "EKR6K9AA",
       "dateOfBirth": "",
-      "testOnline": [],
+      "testOnline": [
+        {
+          "id": "1",
+          "answer": "C++",
+          "isCorrect": false,
+          "correct": "JavaScript"
+        },
+        {
+          "id": "2",
+          "answer": "C",
+          "isCorrect": false,
+          "correct": "Java"
+        },
+        {
+          "id": "3",
+          "answer": "Python",
+          "isCorrect": false,
+          "correct": "HTML"
+        },
+        {
+          "id": "4",
+          "answer": "C",
+          "isCorrect": false,
+          "correct": "JavaScript"
+        },
+        {
+          "id": "5",
+          "answer": "C++",
+          "isCorrect": false,
+          "correct": "HTML"
+        }
+      ],
       "id": 1
     },
     {
