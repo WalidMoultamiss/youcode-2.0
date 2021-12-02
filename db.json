@@ -1,15 +1,33 @@
 {
   "schema": [
     {
-      "email": "cc@gmail.com",
-      "fullName": "cc",
-      "cin": "cc",
-      "telephone": "9787",
-      "password": "HQYJBZ6T",
+      "email": "quvyd@mailinator.com",
+      "fullName": "Imani Clemons",
+      "cin": "dunaguvar@mailinator.com",
+      "telephone": "zezotunyhi@mailinator.com",
+      "password": "HUNIPGI5",
       "dateOfBirth": "",
       "status": "rejected",
       "testOnline": [],
       "id": 1
+    },
+    {
+      "email": "najuqim@mailinator.com",
+      "fullName": "Knox Noel",
+      "cin": "qeba@mailinator.com",
+      "telephone": "dafusafimi@mailinator.com",
+      "password": "GE04KRLD",
+      "dateOfBirth": "",
+      "status": "rejected",
+      "testOnline": [
+        {
+          "id": "1",
+          "answer": "C",
+          "isCorrect": false,
+          "correct": "JavaScript"
+        }
+      ],
+      "id": 2
     }
   ],
   "questions": [
@@ -20,7 +38,7 @@
       "category": "Computer Science",
       "difficulty": "easy",
       "type": "multiple",
-      "correct_answer": "JavaScript",
+      "correct_answer": "C++",
       "incorrect_answers": [
         "Python",
         "C",
@@ -62,7 +80,7 @@
       "category": "Computer Science",
       "difficulty": "easy",
       "type": "multiple",
-      "correct_answer": "JavaScript",
+      "correct_answer": "C++",
       "incorrect_answers": [
         "Python",
         "C",

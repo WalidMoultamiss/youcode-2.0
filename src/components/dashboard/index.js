@@ -1,6 +1,11 @@
 export const UserDashboard = (users) => {
 
     const List = (dataUsers) => {
+        const colors = {
+            accepted: "bg-green-100 text-green-800",
+            pending: "bg-gray-100 text-gray-800",
+            rejected: "bg-pink-100 text-pink-800",
+        }
         const html = dataUsers?.reduce((output, user, id) => {
 
             return (output += (`
@@ -25,8 +30,8 @@ export const UserDashboard = (users) => {
                 </td>
                 
                 <td class=" dark:border-gray-300 dark:text-white dark:bg-gray-900 px-5 py-5 border-b border-gray-200 bg-white text-sm leading-5 text-gray-500">
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                        Accepted
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${colors[user.status]} ">
+                        ${user.status}
                     </span>
                 </td>
             </tr>

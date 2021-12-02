@@ -31,7 +31,7 @@ export class QuestionClass {
     let user = await get(`/schema/?email=${email}`);
     user = user[0];
     let result = {error:"already answered"};
-    if(user.testOnline.length < 5){
+    if(user?.testOnline.length < 5){
     user.testOnline = [...user.testOnline, res];
     result = await put(`/schema/${user.id}`, user);
     }
