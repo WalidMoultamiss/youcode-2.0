@@ -37,7 +37,7 @@ export const UserDashboard = (users) => {
     }
 
     return (`
-        <div class="w-full flex flex-wrap justify-center items-center overflow-scroll dark:bg-gray-700">
+        <div class="w-full flex flex-wrap justify-center items-center overflow-scroll ">
                 <div class="w-[80%] p-3 ">
                     <div class=" bg-white dark:bg-gray-800 dark:text-white dark:border-gray-300  border-t border-b sm:border-l sm:border-r sm:rounded shadow">
                         <div class="border-b p-3 dark:bg-gray-700 dark:text-white">
@@ -122,7 +122,7 @@ export const QuestionDashboard = (questions) => {
     }
 
     return (`
-        <div class="w-full flex flex-wrap justify-center items-center overflow-scroll dark:bg-gray-700 ">
+        <div class="w-full flex flex-wrap justify-center items-center overflow-scroll">
                 <div class="w-[80%] p-3 ">
                     <div class=" bg-white dark:bg-gray-800 dark:text-white dark:border-gray-300  border-t border-b sm:border-l sm:border-r sm:rounded shadow ">
                         <div class="border-b p-3 dark:bg-gray-700 dark:text-white">
