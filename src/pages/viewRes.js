@@ -1,23 +1,24 @@
 export const viewRes = (user) => {
 
-    const getRes = ()=>{
-        const res =  _.viewResStat()
+    const getRes = () => {
+        const res = _.viewResStat()
         const status = res.status
         const questions = res.testOnline
         console.log(questions);
         return {
-            status:()=> status.toUpperCase(),
-            questions:()=> questions,
+            status: () => status.toUpperCase(),
+            questions: () => questions,
         }
     }
 
-    const renderQuestions = ()=>{
-        const questions = getRes().questions()
-        return questions.map((question,index)=>{
-            return(`
-                <div class="w-96 p-3 rounded-lg dark:bg-gray-700 bg-red-50 border-2 ${question.isCorrect ? 'border-green-500':'border-red-500'}" key=${index}>
+    const renderQuestions = () => {
+        const questions = user.length >0 ? user.testOnline : getRes().questions()
+        console.log(user);
+        return questions.map((question, index) => {
+            return (`
+                <div class="w-96 p-3 rounded-lg dark:bg-gray-700 bg-red-50 border-2 ${question.isCorrect ? 'border-green-500' : 'border-red-500'}" key=${index}>
                     <div class="text-left">
-                        <h3 class="font-bold">Question ${index+1}:</h3>
+                        <h3 class="font-bold">Question ${index + 1}:</h3>
                     </div>
                     <div class="flex flex-col text-left">
                         <p>The correct answer is:<b> ${question.correct}</b></p>
@@ -33,7 +34,7 @@ export const viewRes = (user) => {
     return `
     <div class="w-full flex flex-col gap-4 h-screen pt-44 overflow-y-scroll py-11 dark:bg-gray-900">
         <h1 class="dark:text-white">
-            Bro, You have been <b>${getRes().status()}</b>
+            Bro, You have been <b>${user.length>0 ? user.status :getRes().status() }</b>
         </h1>
         <div class="dark:text-white flex flex-col gap-3  justify-center items-center">
         ${renderQuestions()}

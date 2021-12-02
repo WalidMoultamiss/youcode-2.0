@@ -161,13 +161,73 @@
         }
       ],
       "id": 6
+    },
+    {
+      "email": "kutiqoga@mailinator.com",
+      "fullName": "Katelyn Hogan",
+      "cin": "tysu@mailinator.com",
+      "telephone": "kijocizy@mailinator.com",
+      "password": "SUPA5CJK",
+      "dateOfBirth": "",
+      "status": "rejected",
+      "testOnline": [
+        {
+          "id": "1",
+          "answer": "C++",
+          "isCorrect": false,
+          "correct": "JavaScript"
+        },
+        {
+          "id": "2",
+          "answer": "Java",
+          "isCorrect": true,
+          "correct": "Java"
+        },
+        {
+          "id": "3",
+          "answer": "HTML",
+          "isCorrect": true,
+          "correct": "HTML"
+        },
+        {
+          "id": "4",
+          "answer": "C++",
+          "isCorrect": false,
+          "correct": "JavaScript"
+        },
+        {
+          "id": "5",
+          "answer": "HTML",
+          "isCorrect": true,
+          "correct": "HTML"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "email": "poqevegy@mailinator.com",
+      "fullName": "Barry Martin",
+      "cin": "hifeqerasu@mailinator.com",
+      "telephone": "kosunor@mailinator.com",
+      "password": "DBR3W6IP",
+      "dateOfBirth": "",
+      "status": "accepted",
+      "testOnline": [
+        {
+          "id": "1",
+          "answer": "C++",
+          "isCorrect": true,
+          "correct": "C++"
+        }
+      ],
+      "id": 8
     }
   ],
   "questions": [
     {
       "id": "1",
       "question": "What is the name of the language that is used to program computers?",
-      "answer": "JavaScript",
+      "answer": "C++",
       "category": "Computer Science",
       "difficulty": "easy",
       "type": "multiple",
@@ -209,7 +269,7 @@
     {
       "id": "4",
       "question": "What is the name of the language that is used to program games?",
-      "answer": "JavaScript",
+      "answer": "C++",
       "category": "Computer Science",
       "difficulty": "easy",
       "type": "multiple",
