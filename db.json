@@ -1,33 +1,46 @@
 {
   "schema": [
     {
-      "email": "quvyd@mailinator.com",
-      "fullName": "Imani Clemons",
-      "cin": "dunaguvar@mailinator.com",
-      "telephone": "zezotunyhi@mailinator.com",
-      "password": "HUNIPGI5",
+      "email": "osiriswalidosiris@gmail.com",
+      "fullName": "sdsd",
+      "cin": "BM21352",
+      "telephone": "qsdsq",
+      "password": "UMMYTIIO",
       "dateOfBirth": "",
-      "status": "rejected",
-      "testOnline": [],
-      "id": 1
-    },
-    {
-      "email": "najuqim@mailinator.com",
-      "fullName": "Knox Noel",
-      "cin": "qeba@mailinator.com",
-      "telephone": "dafusafimi@mailinator.com",
-      "password": "GE04KRLD",
-      "dateOfBirth": "",
-      "status": "rejected",
+      "status": "pending",
       "testOnline": [
         {
           "id": "1",
-          "answer": "C",
+          "answer": "C++",
           "isCorrect": false,
           "correct": "JavaScript"
+        },
+        {
+          "id": "2",
+          "answer": "C++",
+          "isCorrect": false,
+          "correct": "Java"
+        },
+        {
+          "id": "3",
+          "answer": "C",
+          "isCorrect": false,
+          "correct": "HTML"
+        },
+        {
+          "id": "4",
+          "answer": "C++",
+          "isCorrect": false,
+          "correct": "JavaScript"
+        },
+        {
+          "id": "5",
+          "answer": "HTML",
+          "isCorrect": true,
+          "correct": "HTML"
         }
       ],
-      "id": 2
+      "id": 3
     }
   ],
   "questions": [
