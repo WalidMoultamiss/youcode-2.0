@@ -3,20 +3,36 @@ import { TestOnline } from "../Mout";
 export const online = () => {
   let data = _.Questions();
 
+<<<<<<< HEAD
+  const clearAllTimeOutesBitches = () => {
+    console.log("in");
+    var id = window.setTimeout(function () { }, 0);
+
+    while (id--) {
+      window.clearTimeout(id);
+    }
+  }
+  clearAllTimeOutesBitches()
+
+  const setInt = setTimeout(() => {
+    test().next()
+  }, 5000);
+=======
   
 
     const setInt = setTimeout(() => {
       // test().next()
     }, 5000);
+>>>>>>> 3a7c61db1c7547960e70af2b20abd74121d9405f
 
   //set the current test
   let testStep = localStorage.getItem("testStep")
     ? localStorage.getItem("testStep")
     : 0;
   window.test = () => {
+
     return {
       next: () => {
-        clearTimeout(setInt);
         testStep++;
         localStorage.setItem("testStep", testStep);
         TestOnline();
@@ -33,6 +49,7 @@ export const online = () => {
         return testStep;
       },
       last: () => {
+        clearTimeout(setInt);
         testStep--;
         localStorage.setItem("testStep", testStep);
         TestOnline();
@@ -75,6 +92,7 @@ export const online = () => {
         });
         let res = await _.setQuestion(question);
         test().next();
+        console.log();
       };
 
       if (test().current() == idx) {
@@ -105,13 +123,11 @@ export const online = () => {
                 <div id="timing" class="rounded-full"></div>
             </div>
             <div class="card-header">
-              <h2 class="dark:text-white text-left font-bold text-3xl">Question ${
-                idx + 1
-              }</h2>
+              <h2 class="dark:text-white text-left font-bold text-3xl">Question ${idx + 1
+          }</h2>
               &nbsp;
-              <h4 class="dark:text-white text-left font-bold text-lg">${
-                element.question
-              }</h4>
+              <h4 class="dark:text-white text-left font-bold text-lg">${element.question
+          }</h4>
             </div>
             <div class="flex flex-wrap w-full justify-center gap-3">
               ${randomChecks}
@@ -125,6 +141,7 @@ export const online = () => {
         </div>
   `;
       } else if (test().current() > 4) {
+        clearAllTimeOutesBitches()
         return `
         <div class="flex dark:bg-gray-900 flex-col items-center justify-center h-screen">
             <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg ">
