@@ -51,6 +51,10 @@ class Controller {
         res ? res.func(true) : goTo(`/${path}`)
     }
 
+    viewResStat = ()=>{
+        return UserObj.user
+    }
+
 
 
     Questions = () => {

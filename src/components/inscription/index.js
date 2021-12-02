@@ -46,6 +46,7 @@ export const inscription = () => {
         telephone: telephone.value,
         password: password,
         dateOfBirth:"",
+        status:"pending",
         testOnline: []
       }
       const response = await _.addUser(userData)

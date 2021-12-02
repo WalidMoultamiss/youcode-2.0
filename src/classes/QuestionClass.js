@@ -20,6 +20,7 @@ export class QuestionClass {
         test = user.testOnline.find(item => item.isCorrect == false)
     }
     UserObj.user.status = test?.length === 0 ? 'not yet' : test ? 'rejected' :  'accepted';
+    await put(`/schema/${UserObj.user.id}`, UserObj.user);
     return UserObj.user.status;
     };
 

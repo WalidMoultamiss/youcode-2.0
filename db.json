@@ -1,85 +1,15 @@
 {
   "schema": [
     {
-      "email": "walidmoultamis@gmail.com",
-      "fullName": "sdsd",
-      "cin": "BM21352",
-      "telephone": "qsdsq",
-      "password": "EKR6K9AA",
+      "email": "cc@gmail.com",
+      "fullName": "cc",
+      "cin": "cc",
+      "telephone": "9787",
+      "password": "HQYJBZ6T",
       "dateOfBirth": "",
-      "testOnline": [
-        {
-          "id": "1",
-          "answer": "C++",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "2",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "Java"
-        },
-        {
-          "id": "3",
-          "answer": "Python",
-          "isCorrect": false,
-          "correct": "HTML"
-        },
-        {
-          "id": "4",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "5",
-          "answer": "C++",
-          "isCorrect": false,
-          "correct": "HTML"
-        }
-      ],
+      "status": "rejected",
+      "testOnline": [],
       "id": 1
-    },
-    {
-      "email": "youssef@g.com",
-      "fullName": "Rebecca Rios",
-      "cin": "woju@mailinator.com",
-      "telephone": "064998765",
-      "password": "M3TDP5C6",
-      "dateOfBirth": "",
-      "testOnline": [
-        {
-          "id": "1",
-          "answer": "C++",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "2",
-          "answer": "Java",
-          "isCorrect": true,
-          "correct": "Java"
-        },
-        {
-          "id": "3",
-          "answer": "HTML",
-          "isCorrect": true,
-          "correct": "HTML"
-        },
-        {
-          "id": "4",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "5",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "HTML"
-        }
-      ],
-      "id": 2
     }
   ],
   "questions": [

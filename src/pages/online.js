@@ -1,13 +1,15 @@
+import { goTo } from "../helpers";
 import { TestOnline } from "../Mout";
 
 export const online = () => {
   let data = _.Questions();
 
   clearAllTimeOutes()
-
+  let renderTimes = 0;
   const setInt = setTimeout(() => {
     test().next()
   }, 5000);
+
 
   //set the current test
   let testStep = localStorage.getItem("testStep")
@@ -45,6 +47,7 @@ export const online = () => {
   window.viewRes = async () => {
     let resTest = await _.getResultTestOnline()
     console.log(resTest);
+    goTo('viewres')
     return resTest
   }
 
@@ -124,8 +127,9 @@ export const online = () => {
           </div>
         </div>
   `;
-      } else if (test().current() > 4) {
+      } else if (test().current() == 5 && renderTimes == 0) {
         clearAllTimeOutes()
+        renderTimes++;
         return `
         <div class="flex dark:bg-gray-900 flex-col items-center justify-center h-screen">
             <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg ">
