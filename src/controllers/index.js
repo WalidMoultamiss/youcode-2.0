@@ -51,7 +51,7 @@ class Controller {
         return UserObj.user
     }
 
-    isAuth = () => {
+    isAuth = async () => {
         return UserObj.user
     }
 
