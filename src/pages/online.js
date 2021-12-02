@@ -3,6 +3,11 @@ import { TestOnline } from "../Mout";
 export const online = () => {
   let data = _.Questions();
 
+  
+    const setInt = setTimeout(() => {
+      test().next()
+    }, 5000);
+
   //set the current test
   let testStep = localStorage.getItem("testStep")
     ? localStorage.getItem("testStep")
@@ -10,6 +15,7 @@ export const online = () => {
   window.test = () => {
     return {
       next: () => {
+        clearTimeout(setInt);
         testStep++;
         localStorage.setItem("testStep", testStep);
         TestOnline();
@@ -19,6 +25,7 @@ export const online = () => {
         return testStep;
       },
       reset: () => {
+        clearTimeout(setInt);
         testStep = 0;
         localStorage.setItem("testStep", testStep);
         TestOnline();
@@ -64,6 +71,7 @@ export const online = () => {
       };
 
       if (test().current() == idx) {
+        setInt
         return `
       <style>
         #timing{
