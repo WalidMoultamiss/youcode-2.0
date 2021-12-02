@@ -24,14 +24,13 @@ export const post = async (url, body) => {
     return await response.json()
 };
 
-export const put = async (url, body, token) => {
+export const put = async (url, body) => {
     url = db + url
     const response = await fetch(url, {
         method: "PUT",
         headers: {
-            "accept": "application/json",
-            "Authorization": `Bearer ${token}`,
-        },
+            "Content-type": "application/json",
+          },
         body: JSON.stringify(body)
     });
     return await response.json()
