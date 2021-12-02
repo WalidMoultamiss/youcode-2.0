@@ -22,7 +22,7 @@ export const viewRes = (user) => {
                     </div>
                     <div class="flex flex-col text-left">
                         <p>The correct answer is:<b> ${question.correct}</b></p>
-                        <p>Your answer is: <b>${question.answer}</b></p>
+                        ${ question.answer ? ('<p>Your answer is: <b>'+question.answer+'</b></p>') : '<p><b>You did not answer this question 😥</b></p>'}
                     </div>
                 </div>`
             )
