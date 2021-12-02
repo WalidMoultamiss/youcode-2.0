@@ -12,7 +12,6 @@ export const online = () => {
       next: () => {
         testStep++;
         localStorage.setItem("testStep", testStep);
-        console.log(testStep);
         TestOnline();
         return testStep;
       },
@@ -28,33 +27,41 @@ export const online = () => {
       last: () => {
         testStep--;
         localStorage.setItem("testStep", testStep);
-        console.log(testStep);
         TestOnline();
         return testStep;
       },
     };
   };
 
-  //next test in 15 seconds
-  // setTimeout(() => {
-  //   test().next();
-  // }, 5000);
-
   let html = data
     .map((element, idx) => {
       const arr = [element.answer, ...element.incorrect_answers];
+
       //random arr elements
       const randomArr = arr.sort(() => 0.5 - Math.random());
       const randomChecks = randomArr.reduce((output, element, id) => {
         return (output += `
               <label  for="check_${id}_${idx}" class="form-check  w-2/5 flex gap-2 items-center p-3 rounded-lg transition-all transform hover:scale-105 cursor-pointer dark:bg-gray-600 bg-gray-100 shadow-md">
-                <input id="check_${id}_${idx}" class="form-check-input " type="checkbox" value="${element}">
+                <input id="check_${id}_${idx}" class="form-check-input checkbox" type="checkbox" value="${element}">
                 <label for="check_${id}_${idx}" class="form-check-label cursor-pointer dark:text-white">
                   ${element}
                 </label>
               </label>
       `);
       }, "");
+
+      window.nextQuestion = async () => {
+        let question = {
+          id: +test().current() + 1,
+          answer: [],
+        };
+        document.querySelectorAll(".checkbox").forEach((e) => {
+          e.checked == true ? question.answer.push(e.value) : null;
+        });
+        let res = await _.validateQuestion(question);
+        console.log(res);
+        test().next();
+      };
 
       if (test().current() == idx) {
         return `
@@ -95,13 +102,44 @@ export const online = () => {
               ${randomChecks}
             </div>
             <div class="flex w-full justify-end">
-              <button onclick="test().next()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2">
+              <button onclick="nextQuestion()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2">
                 Next
               </button>
             </div>
           </div>
         </div>
   `;
+      } else if (test().current() > 4) {
+        return `
+        <div class="flex dark:bg-gray-900 flex-col items-center justify-center h-screen">
+            <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg ">
+                <div class="w-full p-3">
+                    <div class="flex justify-start gap-3 items-center">
+                        <div class="p-2 rounded-full cursor-pointer bg-red-600"></div>
+                        <div class="p-2 rounded-full cursor-pointer bg-yellow-400"></div>
+                        <div class="p-2 rounded-full cursor-pointer bg-green-400" ></div>
+                        <input type="text" class="w-full bg-gray-200 outline-none p-1 text-xs px-3 rounded-lg" id="url" placeholder="url" value="https://www.youcode2.ma">
+                    </div>
+                </div>
+                <hr/>
+            <div class="p-3">
+                <div class="mb-4">
+                    <h1 class="text-2xl font-bold dark:text-white text-center">Finish</h1>
+                </div>
+                <p
+                class="text-center mb-6 text-gray-700 dark:text-white">
+                    You have finished the test.
+                </p>
+                <div class="flex items-center justify-end">
+                    <button class=" bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                        See results
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        `;
       }
     })
     .join("");

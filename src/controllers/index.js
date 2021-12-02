@@ -49,6 +49,10 @@ class Controller {
         return QuestionObj.questions
     }
 
+    validateQuestion =(question)=>{
+        return QuestionObj.validateQuestion(question)
+    }
+
     addUser = async (UserData) => {
         let user = await UserObj.instription(UserData);
         this.updateHeader();
