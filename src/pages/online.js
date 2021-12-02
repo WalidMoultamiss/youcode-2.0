@@ -4,8 +4,8 @@ export const online = () => {
   let data = _.Questions();
 
   
-    const setInt = setTimeout(() => {
 
+    const setInt = setTimeout(() => {
       // test().next()
     }, 5000);
 
@@ -41,6 +41,13 @@ export const online = () => {
     };
   };
 
+  window.viewRes = async ()=>{
+    let resTest =  await _.getResultTestOnline()
+    console.log(resTest);
+    return resTest
+  }
+
+
   let html = data
     .map((element, idx) => {
       const arr = [element.answer, ...element.incorrect_answers];
@@ -66,8 +73,7 @@ export const online = () => {
         document.querySelectorAll(".checkbox").forEach((e) => {
           e.checked == true ? question.answer.push(e.value) : null;
         });
-        let res = await _.validateQuestion(question);
-        console.log(res);
+        let res = await _.setQuestion(question);
         test().next();
       };
 
@@ -95,7 +101,7 @@ export const online = () => {
       </style>
         <div class="w-full flex-col flex h-screen items-center dark:bg-gray-900 justify-center">
           <div class="card bg-gray-100 gap-4 flex dark:bg-gray-700 p-3 w-2/5 rounded-lg shadow-md hover:scale-110  flex-col ">
-            <div class="w-full bg-red-50 rounded-full">
+            <div class="w-full bg-red-50  border-2 rounded-full">
                 <div id="timing" class="rounded-full"></div>
             </div>
             <div class="card-header">
@@ -140,7 +146,7 @@ export const online = () => {
                     You have finished the test.
                 </p>
                 <div class="flex items-center justify-end">
-                    <button class=" bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                    <button onclick="viewRes()" class=" bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                         See results
                     </button>
                 </div>

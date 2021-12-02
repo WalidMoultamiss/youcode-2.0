@@ -45,6 +45,8 @@ export const inscription = () => {
         cin: cin.value,
         telephone: telephone.value,
         password: password,
+        dateOfBirth:"",
+        testOnline: []
       }
       const response = await _.addUser(userData)
       email.value = "";

@@ -1,41 +1,51 @@
-
-import { get, put, post } from '../helpers'
+import { get, put, post, UserObj } from "../helpers";
 
 export class QuestionClass {
+  questions = [];
+  question;
 
-    questions = []
-    question
+  getQuestions = async () => {
+    const questions = await get("/questions");
+    this.questions = questions;
+    return questions;
+  };
 
-
-    getQuestions = async () => {
-        const questions = await get('/questions')
-        this.questions = questions
-        return questions
+  getResultTestOnline = async () => {
+    const email = UserObj.user.email;
+    let user = await get(`/schema/?email=${email}`);
+    user = user[0];
+    UserObj.user.status = 'accepted';
+    let test = [];
+    if(user.testOnline.length > 0) {
+        test = user.testOnline.find(item => item.isCorrect == false)
     }
+    UserObj.user.status = test?.length === 0 ? 'not yet' : test ? 'rejected' :  'accepted';
+    return UserObj.user.status;
+    };
 
-    setQuestion = async (email,question) => {
-        const qst = put(`/schema?email=${email}`, question)
-        this.question = qst
-        return qst
+
+  setQuestion = async (question) => {
+    const res = await this.validateQuestion(question)
+    const email = UserObj.user.email;
+    let user = await get(`/schema/?email=${email}`);
+    user = user[0];
+    let result = {error:"already answered"};
+    if(user.testOnline.length < 5){
+    user.testOnline = [...user.testOnline, res];
+    result = await put(`/schema/${user.id}`, user);
     }
+    return result;
+  };
 
-
-
-    validateQuestion = async (question) => {
-        const qst = await get(`/questions/${question.id}`)
-        console.log(qst);
-        if (qst.answer === question.answer[0]) {
-            return true
-        } else {
-            return {
-                error: 'Wrong answer',
-                correct: qst.answer
-            }
-        }
-    }
-
+  validateQuestion = async (question) => {
+    const qst = await get(`/questions/${question.id}`);
+    return {
+      id: qst.id,
+      answer: question.answer[0],
+      isCorrect: qst.answer === question.answer[0],
+      correct: qst.answer,
+    };
+  };
 }
 
-
-export default QuestionClass
-
+export default QuestionClass;
