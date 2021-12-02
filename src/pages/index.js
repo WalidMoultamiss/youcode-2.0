@@ -6,6 +6,10 @@ import { viewRes } from './viewRes'
 import { seriousGame } from './seriousGame'
 import { motivation } from './motivation'
 import { register } from './register'
+import { technique } from './technique'
+import { C } from './C'
+import { js } from './js'
+import { python } from './python'
 
 
 
@@ -21,7 +25,7 @@ let pages = [
   {
     page: Admin,
     path: "admin",
-    auth:true
+    auth: true
   },
   {
     page: login,
@@ -30,24 +34,43 @@ let pages = [
   {
     page: online,
     path: "online",
-    auth:true
+    auth: true
   },
   {
     page: viewRes,
     path: "viewRes",
-    auth:true
+    auth: true
   },
   {
     page: seriousGame,
     path: "seriousgame",
-    auth:true
+    auth: true
   },
   {
     page: motivation,
     path: "motivation",
-    auth:true
-  }
-
+    auth: true
+  },
+  {
+    page: technique,
+    path: "technique",
+    auth: true
+  },
+  {
+    page: C,
+    path: "c",
+    auth: true
+  },
+  {
+    page: js,
+    path: "js",
+    auth: true
+  },
+  {
+    page: python,
+    path: "python",
+    auth: true
+  },
 ]
 
 
