@@ -8,13 +8,21 @@
       "password": "AZERTY",
       "dateOfBirth": "12/12/12",
       "phone": "87987987987",
-      "questions":[
+      "questions": [
         {
-          "id":"",
-          "answer":"",
-          "isCorrect":true
+          "id": "",
+          "answer": "",
+          "isCorrect": true
         }
       ]
+    },
+    {
+      "email": "comebatewi@mailinator.com",
+      "fullName": "Garrison Frost",
+      "cin": "fehyv@mailinator.com",
+      "telephone": "xiqa@mailinator.com",
+      "password": "SD79GBED",
+      "id": "vNJfK3V"
     }
   ],
   "questions": [

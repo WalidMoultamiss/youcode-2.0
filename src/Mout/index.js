@@ -6,9 +6,10 @@ export const TestOnline = async () => {
 };
 
 export const AdminPage = async (switcher) => {
+    console.log("from mouter :",switcher);
     await QuestionObj.getQuestions()
     await UserObj.getUsers()
-    goTo('/admin', { users: UserObj.users, questions: QuestionObj.questions },switcher)
+    goTo('/admin', { users: UserObj.users, questions: QuestionObj.questions ,switcher})
 };
 
 
