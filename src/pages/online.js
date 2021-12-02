@@ -7,7 +7,7 @@ export const online = () => {
   clearAllTimeOutes()
   let renderTimes = 0;
   const setInt = setTimeout(() => {
-    test().next()
+    nextQuestion()
   }, 5000);
 
 
