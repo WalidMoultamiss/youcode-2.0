@@ -1,5 +1,5 @@
 import { Home } from './Home'
-import { About } from './About'
+import { Admin } from './Admin'
 import { login } from './login'
 import { online } from './online'
 
@@ -15,8 +15,8 @@ let pages = [
     path: "Home"
   },
   {
-    page: About,
-    path: "About"
+    page: Admin,
+    path: "admin"
   },
   {
     page: login,

@@ -1,11 +1,17 @@
 import { back } from "../helpers";
 import { header } from "../components";
-import { TestOnline } from "../Mout";
+import { TestOnline, ref, AdminPage } from "../Mout";
 import { goTo, router, UserObj, QuestionObj, render } from "../helpers";
 
 class Controller {
     constructor() {
         window._ = this
+        router();
+
+        
+        //Our Global Router Link
+        window.goTo = goTo;
+
 
         //login onload
         this.loginOnload()
@@ -17,7 +23,6 @@ class Controller {
         back();
 
         //Handle routing system on load
-        router();
         goTo(location.pathname);
 
         QuestionObj.getQuestions()
@@ -25,25 +30,27 @@ class Controller {
         //get Data 
 
 
-        //Our Global Router Link
-        window.goTo = goTo;
 
     }
 
     loginOnload = async () => {
+        console.log("first load", location.pathname);
         let email = localStorage.getItem("email");
         let password = localStorage.getItem("password")
         if (email, password) {
-            console.log("in");
             let res = await this.login({ email, password })
             if (!res) this.logout()
-            TestOnline()
+            this.handlePage(location.pathname.split('/').join(''))
         } else {
             this.logout()
         }
     }
+    handlePage = async (path) => {
+        let res = ref.find(elm => elm.path == path)
+        res ? res.func(true) : goTo(`/${path}`)
+    }
 
-  
+
 
     Questions = () => {
         return QuestionObj.questions

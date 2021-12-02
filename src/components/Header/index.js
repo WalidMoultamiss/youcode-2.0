@@ -1,4 +1,5 @@
 import { goTo } from "../../helpers";
+import { AdminPage } from "../../Mout";
 
 export const header = (data) => {
     let user = data;
@@ -13,6 +14,10 @@ export const header = (data) => {
     window.logout = () => {
         _.logout()
         goTo("/");
+    };
+    //logout remove email and password from local storage
+    window.adminPage = () => {
+        AdminPage()
     };
 
     window.isLoggedIn = () => {
@@ -40,8 +45,8 @@ export const header = (data) => {
                         <span onclick="goTo('home')" class="block cursor-pointer dark:text-gray-100 mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                             Home
                         </span>
-                        <span onclick="goTo('about')" class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                            About
+                        <span onclick="adminPage()" class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                            Admin
                         </span>
                         <span onclick="goTo('online')" class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                             Test
