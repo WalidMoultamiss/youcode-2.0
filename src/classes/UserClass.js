@@ -16,6 +16,16 @@ export class UserClass {
         return result
     }
 
+    getUserById = async (id) => {
+        const result = await get(`/schema/${id}`)
+        return result
+    }
+
+    updateStatus = async (id, status) => {
+        let user = await this.getUserById(id)
+        return await put(`/schema/${id}`, { ...user, status: status })
+    }
+
     instription = async (data) => {
         const response = await post("/schema", data);
         this.user = response

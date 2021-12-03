@@ -1,4 +1,4 @@
-import { get, put, post, UserObj } from "../helpers";
+import { get, put, post, UserObj, patch } from "../helpers";
 
 export class QuestionClass {
   questions = [];
@@ -21,8 +21,8 @@ export class QuestionClass {
       test = user.testOnline.find(item => item.isCorrect == false)
     }
     UserObj.user.testOnline = user.testOnline;
-    UserObj.user.status = test?.length === 0 ? 'pending' : test ? 'rejected' :  'review';
-    await put(`/schema/${UserObj.user.id}`, UserObj.user);
+    UserObj.user.status = test?.length === 0 ? 'pending' : test ? 'rejected' : 'review';
+    await patch(`/schema/${UserObj.user.id}`, { status: UserObj.user.status });
     console.log(UserObj.user.status);
     return UserObj.user.status;
   };
@@ -39,7 +39,6 @@ export class QuestionClass {
     const email = UserObj.user.email;
     let user = await get(`/schema/?email=${email}`);
     user = user[0];
-    user.status = "onReview"
     user.technique = answer
     const result = await put(`/schema/${user.id}`, user);
     return result;

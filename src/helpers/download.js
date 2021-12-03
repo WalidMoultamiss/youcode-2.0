@@ -1,29 +1,26 @@
 export const download = ((User) => {
     const saveData = (data, fileName) => {
-        var a = document.createElement("a");
-        // document.body.appendChild(a);
-        // a.style = "display: none";
-        var json = data,
+        const a = document.createElement("a");
+        const json = data,
             blob = new Blob([json], { type: "octet/stream" }),
             url = window.URL.createObjectURL(blob);
         a.href = url;
-        a.download =`${ fileName}.txt`;
+        a.download = `${fileName}.txt`;
         a.click();
         window.URL.revokeObjectURL(url);
-
     }
 
-    const online = User.testOnline.reduce((output,qst,idx)=>{
+    const online = User.testOnline.reduce((output, qst, idx) => {
         return output += `
-            ${idx+1} : USER ANSWER ${qst.answer} AND THE CORRECT ANSWER ${qst.correct}
+            ${idx + 1} : USER ANSWER ${qst.answer} AND THE CORRECT ANSWER ${qst.correct}
         `
-    },'')
+    }, '')
 
-    const motivation = User.motivation.reduce((output,answer,idx)=>{
+    const motivation = User.motivation.reduce((output, answer, idx) => {
         return output += `
-            ${idx+1} : USER ANSWER ${answer.text}
+            ${idx + 1} : USER ANSWER ${answer.text}
         `
-    },'')
+    }, '')
 
     const data = `
     FULL NAME      : ${User.fullName.toUpperCase()} 

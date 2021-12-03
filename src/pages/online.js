@@ -45,7 +45,9 @@ export const online = () => {
       },
     };
   };
-
+  window.checkWitchOne = () => {
+    (user.status != 'review' && user.status != 'pending' && user.seriousGame ) ? goTo('viewres') : viewRes()
+  }
   window.viewRes = async () => {
     let resTest = await _.getResultTestOnline()
     console.log(resTest);
@@ -155,7 +157,7 @@ export const online = () => {
                     You have finished the test.
                 </p>
                 <div class="flex items-center justify-end">
-                    <button onclick="viewRes()" class=" bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                    <button onclick="checkWitchOne()" class=" bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                         See results
                     </button>
                 </div>
@@ -168,4 +170,8 @@ export const online = () => {
     })
     .join("");
   return `${html}`;
+
+ 
 };
+
+

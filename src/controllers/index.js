@@ -73,18 +73,22 @@ class Controller {
         return QuestionObj.setQuestion(question)
     }
 
-    setStep = (question)=>{
+    updateUserStatus = async (id, status) => {
+        return await UserObj.updateStatus(id, status)
+    }
+
+    setStep = (question) => {
         UserObj.user.testOnline.push(question)
     }
 
-    setSeriousGame = (answer)=>{
+    setSeriousGame = (answer) => {
         return QuestionObj.setSeriousGame(answer)
     }
-    
-    setMotivation = (answer)=>{
+
+    setMotivation = (answer) => {
         return QuestionObj.setMotivation(answer)
     }
-    setTestTechnique = (answer)=>{
+    setTestTechnique = (answer) => {
         return QuestionObj.setTestTechnique(answer)
     }
 
