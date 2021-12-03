@@ -26,6 +26,25 @@ export class QuestionClass {
     return UserObj.user.status;
   };
 
+  setSeriousGame = async (answer) => {
+    const email = UserObj.user.email;
+    let user = await get(`/schema/?email=${email}`);
+    user = user[0];
+    user.seriousGame = answer
+    const result = await put(`/schema/${user.id}`, user);
+    return result;
+  }
+
+
+  setMotivation = async (answer) => {
+    const email = UserObj.user.email;
+    let user = await get(`/schema/?email=${email}`);
+    user = user[0];
+    user.motivation = answer
+    const result = await put(`/schema/${user.id}`, user);
+    return result;
+  }
+
 
   setQuestion = async (question) => {
     const res = await this.validateQuestion(question)

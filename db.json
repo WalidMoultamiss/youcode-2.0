@@ -1,221 +1,23 @@
 {
   "schema": [
     {
-      "email": "osiriswalidosiris@gmail.com",
-      "fullName": "sdsd",
-      "cin": "BM21352",
-      "telephone": "qsdsq",
-      "password": "UMMYTIIO",
-      "dateOfBirth": "",
-      "status": "rejected",
-      "testOnline": [
-        {
-          "id": "1",
-          "answer": "C++",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "2",
-          "answer": "C++",
-          "isCorrect": false,
-          "correct": "Java"
-        },
-        {
-          "id": "3",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "HTML"
-        },
-        {
-          "id": "4",
-          "answer": "C++",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "5",
-          "answer": "HTML",
-          "isCorrect": true,
-          "correct": "HTML"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "email": "Ahmedsabika@gmail.com",
-      "fullName": "sdsd",
-      "cin": "sdf",
-      "telephone": "sdf",
-      "password": "OH00JWBP",
-      "dateOfBirth": "",
-      "status": "rejected",
-      "testOnline": [
-        {
-          "id": "1",
-          "answer": "JavaScript",
-          "isCorrect": true,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "2",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "Java"
-        },
-        {
-          "id": "3",
-          "answer": "HTML",
-          "isCorrect": true,
-          "correct": "HTML"
-        },
-        {
-          "id": "4",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "5",
-          "answer": "Python",
-          "isCorrect": false,
-          "correct": "HTML"
-        }
-      ],
-      "id": 4
-    },
-    {
-      "email": "karimbaggari@gmail.com",
-      "fullName": "sdsd",
-      "cin": "BM40199",
-      "telephone": "qsdsq",
-      "password": "DA16HV9B",
-      "dateOfBirth": "",
-      "status": "rejected",
-      "testOnline": [
-        {
-          "id": "1",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "2",
-          "answer": "Python",
-          "isCorrect": false,
-          "correct": "Java"
-        },
-        {
-          "id": "3",
-          "answer": "Python",
-          "isCorrect": false,
-          "correct": "HTML"
-        },
-        {
-          "id": "4",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "5",
-          "answer": "Python",
-          "isCorrect": false,
-          "correct": "HTML"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "email": "Ahmedsabsika@gmail.com",
-      "fullName": "sdsd",
-      "cin": "BM21352",
-      "telephone": "qsdsq",
-      "password": "I009FC2L",
-      "dateOfBirth": "",
-      "status": "rejected",
-      "testOnline": [
-        {
-          "id": "1",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "2",
-          "isCorrect": false,
-          "correct": "Java"
-        },
-        {
-          "id": "3",
-          "isCorrect": false,
-          "correct": "HTML"
-        },
-        {
-          "id": "4",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "5",
-          "isCorrect": false,
-          "correct": "HTML"
-        }
-      ],
-      "id": 6
-    },
-    {
-      "email": "walidmsdoultamis@gmail.com",
-      "fullName": "sdsd",
-      "cin": "qsd",
-      "telephone": "qsd",
-      "password": "Z79HQ9OS",
-      "dateOfBirth": "",
-      "status": "rejected",
-      "testOnline": [
-        {
-          "id": "1",
-          "answer": "JavaScript",
-          "isCorrect": true,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "2",
-          "isCorrect": false,
-          "correct": "Java"
-        },
-        {
-          "id": "3",
-          "answer": "HTML",
-          "isCorrect": true,
-          "correct": "HTML"
-        },
-        {
-          "id": "4",
-          "isCorrect": false,
-          "correct": "JavaScript"
-        },
-        {
-          "id": "5",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "HTML"
-        }
-      ],
-      "id": 7
-    },
-    {
       "email": "walidmoultamis@gmail.com",
       "fullName": "sdsd",
       "cin": "BM21352",
       "telephone": "qsdsq",
-      "password": "PO3YTGQQ",
+      "password": "79EGLDCQ",
       "dateOfBirth": "",
+      "seriousGame": "",
+      "motivation": [],
+      "technique": {
+        "lang": "",
+        "script": ""
+      },
       "status": "rejected",
       "testOnline": [
         {
-          "id": "1",
-          "answer": "C++",
-          "isCorrect": true,
-          "correct": "C++"
+          "answer": "Rust",
+          "isCorrect": false
         },
         {
           "id": "2",
@@ -223,47 +25,58 @@
           "correct": "Java"
         },
         {
-          "id": "3",
+          "id": "2",
           "isCorrect": false,
-          "correct": "HTML"
+          "correct": "Java"
         },
         {
-          "id": "4",
-          "answer": "C++",
-          "isCorrect": true,
-          "correct": "C++"
+          "id": "2",
+          "isCorrect": false,
+          "correct": "Java"
         },
         {
-          "id": "5",
+          "id": "2",
           "isCorrect": false,
-          "correct": "HTML"
+          "correct": "Java"
         }
       ],
-      "id": 8
+      "id": 1
     },
     {
-      "email": "walidmoultamzzis@gmail.com",
+      "email": "Ahmedsabika@gmail.com",
       "fullName": "sdsd",
       "cin": "BM21352",
       "telephone": "qsdsq",
-      "password": "WQN2A6XH",
+      "password": "3JB0H7SE",
       "dateOfBirth": "",
+      "seriousGame": [],
+      "motivation": [],
+      "technique": {
+        "lang": "",
+        "script": ""
+      },
       "status": "rejected",
       "testOnline": [
         {
+          "answer": "C",
+          "isCorrect": false
+        },
+        {
           "id": "1",
+          "answer": "Python",
           "isCorrect": false,
           "correct": "C++"
         },
         {
           "id": "2",
+          "answer": "C",
           "isCorrect": false,
           "correct": "Java"
         },
         {
           "id": "3",
-          "answer": "HTML",
-          "isCorrect": true,
+          "answer": "Go",
+          "isCorrect": false,
           "correct": "HTML"
         },
         {
@@ -271,56 +84,9 @@
           "answer": "Python",
           "isCorrect": false,
           "correct": "C++"
-        },
-        {
-          "id": "5",
-          "isCorrect": false,
-          "correct": "HTML"
         }
       ],
-      "id": 9
-    },
-    {
-      "email": "kezofelycy@mailinator.com",
-      "fullName": "Yael Huber",
-      "cin": "jusaqew@mailinator.com",
-      "telephone": "behiv@mailinator.com",
-      "password": "3RK3LHCO",
-      "dateOfBirth": "",
-      "status": "rejected",
-      "testOnline": [
-        {
-          "id": "1",
-          "answer": "Rust",
-          "isCorrect": false,
-          "correct": "C++"
-        },
-        {
-          "id": "1",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "C++"
-        },
-        {
-          "id": "1",
-          "answer": "Python",
-          "isCorrect": false,
-          "correct": "C++"
-        },
-        {
-          "id": "1",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "C++"
-        },
-        {
-          "id": "1",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "C++"
-        }
-      ],
-      "id": 10
+      "id": 2
     }
   ],
   "questions": [

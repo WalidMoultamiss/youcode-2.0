@@ -1,4 +1,13 @@
 export const motivation = () => {
+
+    window.setMotivation = async  ()=>{
+        const motivations =[]
+        document.querySelectorAll('.textarea').forEach(e=>[...motivations,e.value])
+        const res = await _.setSeriousGame(motivations)
+        console.log(res);
+        goTo('technique')
+    }
+
   return `
     <div class="w-full flex flex-col items-center gap-4 h-screen pt-44 overflow-y-scroll py-11 dark:bg-gray-900">
     <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg ">
@@ -21,21 +30,21 @@ export const motivation = () => {
                     Why did you choose Youcode ?
                 </h2>
                 <br/>
-        <textarea class="w-full rounded-md shadow-md bg-gray-600 p-3 border-2  outline-none dark:text-white h-28" id="textarea"></textarea>
+        <textarea class="w-full textarea rounded-md shadow-md bg-gray-600 p-3 border-2  outline-none dark:text-white h-28" id="textarea"></textarea>
                 <br/>
                 <h2 class="dark:text-white">
                     If you got suspended from youcode what would you do ?
                 </h2>
                 <br/>
-        <textarea class="w-full rounded-md shadow-md bg-gray-600 p-3 border-2  outline-none dark:text-white h-28" id="textarea"></textarea>
+        <textarea class="w-full textarea rounded-md shadow-md bg-gray-600 p-3 border-2  outline-none dark:text-white h-28" id="textarea"></textarea>
                 <br/>
                 <h2 class="dark:text-white">
                     Are you from Safi ?
                 </h2>
                 <br/>
-        <textarea class="w-full rounded-md shadow-md bg-gray-600 p-3 border-2  outline-none dark:text-white h-28" id="textarea"></textarea>
+        <textarea class="w-full textarea rounded-md shadow-md bg-gray-600 p-3 border-2  outline-none dark:text-white h-28" id="textarea"></textarea>
         <div class="w-full flex justify-end">
-            <button class=" bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600" id="submit" onclick="goTo('technique')">
+            <button class=" bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600" id="submit" onclick="setMotivation()">
                 Submit your answers
             </button>
         </div>

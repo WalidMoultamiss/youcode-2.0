@@ -51,7 +51,7 @@ class Controller {
         return UserObj.user
     }
 
-    isAuth = async () => {
+    isAuth = () => {
         return UserObj.user
     }
 
@@ -73,6 +73,16 @@ class Controller {
         return QuestionObj.setQuestion(question)
     }
 
+    setStep = (question)=>{
+        UserObj.user.testOnline.push(question)
+    }
+
+    setSeriousGame = (answer)=>{
+        return QuestionObj.setSeriousGame(answer)
+    }
+    setMotivation = (answer)=>{
+        return QuestionObj.setMotivation(answer)
+    }
 
     addUser = async (UserData) => {
         let user = await UserObj.instription(UserData);

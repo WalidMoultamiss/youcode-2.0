@@ -12,15 +12,17 @@ export const online = () => {
 
 
   //set the current test
-  let testStep = localStorage.getItem("testStep")
-    ? localStorage.getItem("testStep")
-    : 0;
+  let user = _.isAuth();
+  let testStep = 0;
+  if(user.testOnline.length != 0 ){
+    testStep = user.testOnline.length 
+  }
+
   window.test = () => {
 
     return {
       next: () => {
-        testStep++;
-        localStorage.setItem("testStep", testStep);
+        // testStep++;
         TestOnline();
         return testStep;
       },
@@ -36,7 +38,7 @@ export const online = () => {
       },
       last: () => {
         clearTimeout(setInt);
-        testStep--;
+        // testStep--;
         localStorage.setItem("testStep", testStep);
         TestOnline();
         return testStep;
@@ -71,13 +73,15 @@ export const online = () => {
 
       window.nextQuestion = async () => {
         let question = {
-          id: +test().current() + 1,
+          id: +test().current() ,
           answer: [],
         };
         document.querySelectorAll(".checkbox").forEach((e) => {
           e.checked == true ? question.answer.push(e.value) : null;
         });
         let res = await _.setQuestion(question);
+        console.log(res);
+        _.setStep(res)
         test().next();
         console.log();
       };

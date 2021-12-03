@@ -14,12 +14,11 @@ export const inscription = () => {
     const emailValue = email.value;
     const response = await get("/schema?email=" + emailValue);
 
-
     if (response.length > 0) {
       console.log("email exist");
       document.querySelector("#inscr-popup").style.display = "flex";
     } else {
-      addUser()
+      addUser();
     }
   };
 
@@ -45,11 +44,17 @@ export const inscription = () => {
         cin: cin.value,
         telephone: telephone.value,
         password: password,
-        dateOfBirth:"",
-        status:"pending",
-        testOnline: []
-      }
-      const response = await _.addUser(userData)
+        dateOfBirth: "",
+        seriousGame: "",
+        motivation: [],
+        technique: {
+          lang: "",
+          script: "",
+        },
+        status: "pending",
+        testOnline: [],
+      };
+      const response = await _.addUser(userData);
       email.value = "";
       fullname.value = "";
       cin.value = "";

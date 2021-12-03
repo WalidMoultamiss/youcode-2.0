@@ -1,4 +1,10 @@
 export const seriousGame = () => {
+    window.setSerious = async  ()=>{
+        const seriousGame = document.getElementById("seriousGame")
+        const res = await _.setSeriousGame(seriousGame)
+        console.log(res);
+        goTo('motivation')
+    }
   return `
     <div class="w-full flex flex-col items-center gap-4 h-screen pt-44 overflow-y-scroll py-11 dark:bg-gray-900">
     <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg ">
@@ -26,9 +32,9 @@ export const seriousGame = () => {
                 </h2>
                 
                 <br/>
-        <textarea class="w-full rounded-md shadow-md bg-gray-600 p-3 border-2  outline-none dark:text-white h-64" id="textarea"></textarea>
+        <textarea id="seriousGame" class="w-full rounded-md shadow-md bg-gray-600 p-3 border-2  outline-none dark:text-white h-64" id="textarea"></textarea>
         <div class="w-full flex justify-end">
-            <button class=" bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600" id="submit" onclick="goTo('motivation')" >
+            <button class=" bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600" id="submit" onclick="setSerious()" >
                 Submit your business model
             </button>
         </div>
