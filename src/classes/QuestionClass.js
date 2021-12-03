@@ -14,13 +14,13 @@ export class QuestionClass {
     const email = UserObj.user.email;
     let user = await get(`/schema/?email=${email}`);
     user = user[0];
-    UserObj.user.status = 'accepted';
+    UserObj.user.status = 'onReview';
     let test = [];
     if (user.testOnline.length > 0) {
       test = user.testOnline.find(item => item.isCorrect == false)
     }
     UserObj.user.testOnline = user.testOnline;
-    UserObj.user.status = test?.length === 0 ? 'pending' : test ? 'rejected' :  'accepted';
+    UserObj.user.status = test?.length === 0 ? 'pending' : test ? 'rejected' :  'onReview';
     await put(`/schema/${UserObj.user.id}`, UserObj.user);
     console.log(UserObj.user.status);
     return UserObj.user.status;
@@ -31,6 +31,15 @@ export class QuestionClass {
     let user = await get(`/schema/?email=${email}`);
     user = user[0];
     user.seriousGame = answer
+    const result = await put(`/schema/${user.id}`, user);
+    return result;
+  }
+  setTestTechnique = async (answer) => {
+    const email = UserObj.user.email;
+    let user = await get(`/schema/?email=${email}`);
+    user = user[0];
+    user.status = "onReview"
+    user.technique = answer
     const result = await put(`/schema/${user.id}`, user);
     return result;
   }

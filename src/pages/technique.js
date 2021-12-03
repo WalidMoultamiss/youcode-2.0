@@ -23,7 +23,7 @@ export const technique = () => {
                 </h2>
                 <br/>
                 <div class="w-full flex justify-center gap-8 p-3">
-                    <div onclick="goTo('c')" class="flex flex-col transition-all transform hover:scale-110 cursor-pointer items-center">
+                    <div onclick="goTo('c','c')" class="flex flex-col transition-all transform hover:scale-110 cursor-pointer items-center">
                         <div
                         style="background-image:url('https://geekboots.sfo2.cdn.digitaloceanspaces.com/post/why-c-is-so-popular-and-still-the-best-programming-language-1564571756694.jpg');"
                         class="w-32 h-44 rounded-lg border-2 bg-center bg-cover"
@@ -31,7 +31,7 @@ export const technique = () => {
                         </div>
                         <span class="dark:text-white mt-2 font-bold text-xl text-center">C</span>
                     </div>
-                    <div onclick="goTo('js')" class="flex flex-col transition-all transform hover:scale-110 cursor-pointer items-center">
+                    <div onclick="goTo('js','js')" class="flex flex-col transition-all transform hover:scale-110 cursor-pointer items-center">
                         <div
                         style="background-image:url('https://www.seekpng.com/png/detail/80-803501_javascript-logo-logo-de-java-script-png.png');"
                         class="w-32 h-44 rounded-lg border-2 bg-center bg-cover"
@@ -39,7 +39,7 @@ export const technique = () => {
                         </div>
                         <span class="dark:text-white mt-2 font-bold text-xl text-center">JAVASCRIPT</span>
                     </div>
-                    <div onclick="goTo('python')" class="flex flex-col transition-all transform hover:scale-110 cursor-pointer items-center">
+                    <div onclick="goTo('python','python')" class="flex flex-col transition-all transform hover:scale-110 cursor-pointer items-center">
                         <div
                         style="background-image:url('https://localist-images.azureedge.net/photos/31583518696354/original/0135374d81d3481dd24228d0deea271b904000a5.png');"
                         class="w-32 h-44 rounded-lg border-2 bg-center bg-cover"

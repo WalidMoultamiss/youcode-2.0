@@ -1,4 +1,17 @@
-export const python = () => {
+export const python = (lang) => {
+
+    if(lang !== 'python'){
+        goTo('technique')
+    }
+    window.setTestTechniquePy = async  ()=>{
+        let testTechnique = {
+            lang: lang,
+            script: document.getElementById('script').value,
+        }
+        const res = await _.setTestTechnique(testTechnique)
+        console.log(res);
+        // goTo('technique')
+    }
 
     (_.isAuth()).status == 'rejected' ? goTo('viewres') : null
 
@@ -42,11 +55,11 @@ export const python = () => {
                     <div>
                     </div>
                 </div>
-                <textarea autofocus style="font-family: monospace;"
+                <textarea id="script" autofocus style="font-family: monospace;"
                     class="dark:bg-gray-800 dark:text-white w-full h-48 rounded-md p-3 outline-none "></textarea>
                 </div>
                 <div class="w-full flex justify-end">
-                <button class=" bg-blue-500 text-white p-2 mt-3 rounded-md hover:bg-blue-600" id="submit">
+                <button onclick='setTestTechniquePy()' class=" bg-blue-500 text-white p-2 mt-3 rounded-md hover:bg-blue-600" id="submit">
                     Submit your answers
                 </button>
                 </div>

@@ -12,8 +12,8 @@ export const motivation = () => {
             )
         })
         console.log(motivations);
-        const res = await _.setSeriousGame(motivations)
-        console.log(res);
+        const res = await _.setMotivation(motivations)
+        // console.log(res);
         goTo('technique')
     }
 
