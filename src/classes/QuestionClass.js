@@ -14,6 +14,7 @@ export class QuestionClass {
     const email = UserObj.user.email;
     let user = await get(`/schema/?email=${email}`);
     user = user[0];
+    
     UserObj.user.status = 'review';
     let test = [];
     if (user.testOnline.length > 0) {
