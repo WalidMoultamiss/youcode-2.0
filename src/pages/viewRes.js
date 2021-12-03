@@ -8,9 +8,11 @@ export const viewRes = (user) => {
             return {
                 status: () => status?.toUpperCase(),
                 questions: () => questions,
+                fullName: () => res.fullName
             }
         }
     }
+    console.log(getRes().fullName());
 
     const renderQuestions = () => {
         const questions = user.testOnline ? user.testOnline : getRes()?.questions()
@@ -36,15 +38,13 @@ export const viewRes = (user) => {
         }).join('')
     }
 
-
-
     return `
     <div class="w-full flex flex-col gap-4 h-screen pt-44 overflow-y-scroll py-11 dark:bg-gray-900">
         <h1 class="dark:text-white">
-            Bro, You have been <b>${user.testOnline ? user.status : getRes()?.status()}</b>
+            ${user.testOnline ? user.fullName : getRes()?.fullName()}, You have been <b>${user.testOnline ? user.status : getRes()?.status()}</b>
         </h1>
         <div class="flex flex-col items-center">
-            <div class="w-1/12 flex justify-center items-center">
+            <div class="w-1/12 flex justify-center items-center ${user.testOnline ? user.status == 'rejected' || (_.isAuth())?.role == 'admin' ? 'hidden' : "" : getRes()?.status() == 'rejected'.toUpperCase() || (_.isAuth())?.role == 'admin' ? 'hidden' : ""} ">
                 <button class="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-lg" onclick="goTo('seriousgame')">
                     Go to next exam
                 </button>

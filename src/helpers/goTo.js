@@ -10,7 +10,9 @@ export const goTo = async (path, data = []) => {
         let checker = path === "/" ? path : path.replace('/', "")
         return page?.path.toLowerCase() === checker
     })
-    if (page.auth && !auth.email) {
+
+    console.log(page);
+    if (page?.auth && !auth?.email) {
         history.pushState({ usreid: 3 }, path, "/?page=" + page.path)
         router()
         render(authPage, data)
