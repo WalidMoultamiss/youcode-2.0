@@ -1,10 +1,18 @@
+import { download } from "../../helpers"
+
 export const UserDashboard = (users) => {
+
+    window.downloadFile = (id)=>{
+        const user = users.find(user => user.id == id)
+        download(user)
+    }
 
     const List = (dataUsers) => {
         const colors = {
             accepted: "bg-green-100 text-green-800",
             pending: "bg-gray-100 text-gray-800",
             rejected: "bg-pink-100 text-pink-800",
+            review: "bg-purple-100 text-purple-800",
         }
 
 
@@ -38,21 +46,34 @@ export const UserDashboard = (users) => {
                 </td>
                 
                 <td class=" dark:border-gray-300 dark:text-white dark:bg-gray-900 px-5 py-5 border-b border-gray-200 bg-white text-sm leading-5 text-gray-500">
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${colors[user.status]} ">
+                    <span class=" px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${colors[user.status]} ">
                         ${user.status}
                     </span>
                 </td>
-                <td onclick="checkUserAnswers(${user.id})" class=" dark:border-gray-300 dark:text-white dark:bg-gray-900 px-5 py-5 border-b border-gray-200 bg-white text-sm leading-5 text-gray-500 cursor-pointer">
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-300 text-black">
-                    <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="20" 
-                    height="20" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                        <circle cx="12" cy="12" r="3"></circle></svg>
+                <td onclick="checkUserAnswers(${user.id})" class=" dark:border-gray-300 dark:text-white dark:bg-gray-900 border-b border-gray-200 bg-white text-sm leading-5 text-gray-500 cursor-pointer">
+                    <span class="p-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-300 text-black">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="20" 
+                        height="20" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </span>
+                </td>
+                <td onclick="downloadFile(${user.id})" class=" dark:border-gray-300 dark:text-white dark:bg-gray-900 border-b border-gray-200 bg-white text-sm leading-5 text-gray-500 cursor-pointer">
+                    <span class="p-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-300 text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" 
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        class="feather feather-download px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-300 text-black">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4">
+                        </path>
+                        <polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3">
+                        </line>
+                    </svg>
                     </span>
                 </td>
             </tr>
@@ -96,6 +117,9 @@ export const UserDashboard = (users) => {
                                         </th>
                                         <th class=" dark:text-white dark:bg-gray-700 px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                             check
+                                        </th>
+                                        <th class=" dark:text-white dark:bg-gray-700 px-5 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                            download
                                         </th>
                                     </tr>
                                 </thead>
