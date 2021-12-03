@@ -10,23 +10,36 @@
       "seriousGame": [
         {
           "id": 0,
-          "text": "sdfsdf"
+          "text": "qsd"
         },
         {
           "id": 1,
-          "text": "sdf"
+          "text": "qsd"
         },
         {
           "id": 2,
-          "text": "sdfsdfsdf"
+          "text": "qsdqd"
         }
       ],
-      "motivation": [],
+      "motivation": [
+        {
+          "id": 0,
+          "text": "qsd"
+        },
+        {
+          "id": 1,
+          "text": "qsd"
+        },
+        {
+          "id": 2,
+          "text": "qsd"
+        }
+      ],
       "technique": {
-        "lang": "",
-        "script": ""
+        "lang": "python",
+        "script": "sd"
       },
-      "status": "accepted",
+      "status": "onReview",
       "testOnline": [
         {
           "id": "1",
