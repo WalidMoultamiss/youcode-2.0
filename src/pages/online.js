@@ -14,8 +14,8 @@ export const online = () => {
   //set the current test
   let user = _.isAuth();
   let testStep = 0;
-  if(user.testOnline.length != 0 ){
-    testStep = user.testOnline.length 
+  if (user.testOnline.length != 0) {
+    testStep = user.testOnline.length
   }
 
   window.test = () => {
@@ -73,7 +73,7 @@ export const online = () => {
 
       window.nextQuestion = async () => {
         let question = {
-          id: +test().current() ,
+          id: +test().current() + 1,
           answer: [],
         };
         document.querySelectorAll(".checkbox").forEach((e) => {

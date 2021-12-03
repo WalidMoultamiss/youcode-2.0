@@ -33,10 +33,18 @@ export const header = (data) => {
 
     window.isAdmin = () => {
         return user.role === "admin" ? (`
-        ?
-        <span onclick="navigate('admin','admin')" class="block mt-4 cursor-pointer dark:text-gray-100 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-            Admin
-        </span> `) : ""
+                <svg onclick="navigate('admin','admin')" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                    stroke-linejoin="round" class="feather feather-settings
+                        feather feather-moon p-2 leading-none border 
+                        rounded text-white border-white hover:border-transparent 
+                        hover:text-black hover:bg-white cursor-pointer
+                    ">
+                    <circle cx="12" cy="12" r="3">
+                    </circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                    </path>
+                </svg>
+         `) : ""
     }
 
     return `
@@ -53,7 +61,7 @@ export const header = (data) => {
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                     <div class="text-sm lg:flex-grow ">
-                        ${isAdmin()}
+                        
                     </div>
                     <div class="flex justify-center">
                         <div class="flex gap-4 items-center">
@@ -61,6 +69,7 @@ export const header = (data) => {
                                 <p class="text-white uppercase text-sm font-semibold ">${user.fullName}</p>
                             </div>
                             <img class="w-10 h-10 rounded-full mr-4 ${isLoggedIn() ? 'inline-block' : 'hidden'}" src="https://picsum.photos/200/300" alt="Avatar of Youcode user">
+                            ${isAdmin()}
                             <svg onclick="toggleDarkMode()" xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
                                 stroke-linecap="round" 
