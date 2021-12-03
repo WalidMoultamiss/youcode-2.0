@@ -5,98 +5,22 @@
       "fullName": "sdsd",
       "cin": "BM21352",
       "telephone": "qsdsq",
-      "password": "79EGLDCQ",
+      "password": "4TV6GEDJ",
       "dateOfBirth": "",
-      "seriousGame": "",
-      "motivation": [],
-      "technique": {
-        "lang": "",
-        "script": ""
-      },
-      "status": "rejected",
-      "testOnline": [
+      "seriousGame": [
         {
-          "answer": "Rust",
-          "isCorrect": false
+          "id": 0,
+          "text": "sdfsdf"
         },
         {
-          "id": "2",
-          "isCorrect": false,
-          "correct": "Java"
+          "id": 1,
+          "text": "sdf"
         },
         {
-          "id": "2",
-          "isCorrect": false,
-          "correct": "Java"
-        },
-        {
-          "id": "2",
-          "isCorrect": false,
-          "correct": "Java"
-        },
-        {
-          "id": "2",
-          "isCorrect": false,
-          "correct": "Java"
+          "id": 2,
+          "text": "sdfsdfsdf"
         }
       ],
-      "id": 1
-    },
-    {
-      "email": "Ahmedsabika@gmail.com",
-      "fullName": "sdsd",
-      "cin": "BM21352",
-      "telephone": "qsdsq",
-      "password": "3JB0H7SE",
-      "dateOfBirth": "",
-      "seriousGame": [],
-      "motivation": [],
-      "technique": {
-        "lang": "",
-        "script": ""
-      },
-      "status": "rejected",
-      "testOnline": [
-        {
-          "answer": "C",
-          "isCorrect": false
-        },
-        {
-          "id": "1",
-          "answer": "Python",
-          "isCorrect": false,
-          "correct": "C++"
-        },
-        {
-          "id": "2",
-          "answer": "C",
-          "isCorrect": false,
-          "correct": "Java"
-        },
-        {
-          "id": "3",
-          "answer": "Go",
-          "isCorrect": false,
-          "correct": "HTML"
-        },
-        {
-          "id": "4",
-          "answer": "Python",
-          "isCorrect": false,
-          "correct": "C++"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "email": "hukisyv@mailinator.com",
-      "fullName": "Preston Schmidt",
-      "cin": "cyniqo@mailinator.com",
-      "telephone": "mabyma@mailinator.com",
-      "password": "890XHHVE",
-      "role": "admin",
-      "dateOfBirth": "",
-      "seriousGame": "",
       "motivation": [],
       "technique": {
         "lang": "",
@@ -135,7 +59,7 @@
           "correct": "HTML"
         }
       ],
-      "id": 3
+      "id": 1
     }
   ],
   "questions": [
@@ -147,7 +71,11 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "C++",
-      "incorrect_answers": ["Python", "C", "Rust"]
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "Rust"
+      ]
     },
     {
       "id": "2",
@@ -157,7 +85,11 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "Java",
-      "incorrect_answers": ["Python", "C", "C++"]
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "C++"
+      ]
     },
     {
       "id": "3",
@@ -167,7 +99,11 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "HTML",
-      "incorrect_answers": ["Python", "C", "C++"]
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "C++"
+      ]
     },
     {
       "id": "4",
@@ -177,7 +113,11 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "C++",
-      "incorrect_answers": ["Python", "C", "Go"]
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "Go"
+      ]
     },
     {
       "id": "5",
@@ -187,7 +127,11 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "HTML",
-      "incorrect_answers": ["Python", "C", "C++"]
+      "incorrect_answers": [
+        "Python",
+        "C",
+        "C++"
+      ]
     }
   ]
 }

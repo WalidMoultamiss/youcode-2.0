@@ -2,7 +2,15 @@ export const motivation = () => {
 
     window.setMotivation = async  ()=>{
         const motivations =[]
-        document.querySelectorAll('.textarea').forEach(e=>[...motivations,e.value])
+        document.querySelectorAll('.textarea').forEach((e,idx)=>{
+            motivations.push(
+                {
+                    id:idx,
+                    text:e.value
+                }
+            )
+        })
+        console.log(motivations);
         const res = await _.setSeriousGame(motivations)
         console.log(res);
         goTo('technique')

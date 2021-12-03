@@ -1,6 +1,6 @@
 export const seriousGame = () => {
     window.setSerious = async  ()=>{
-        const seriousGame = document.getElementById("seriousGame")
+        const seriousGame = document.getElementById("seriousGame").value
         const res = await _.setSeriousGame(seriousGame)
         console.log(res);
         goTo('motivation')

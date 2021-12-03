@@ -80,10 +80,11 @@ class Controller {
     setSeriousGame = (answer)=>{
         return QuestionObj.setSeriousGame(answer)
     }
+    
     setMotivation = (answer)=>{
         return QuestionObj.setMotivation(answer)
     }
-
+    
     addUser = async (UserData) => {
         let user = await UserObj.instription(UserData);
         this.updateHeader();
