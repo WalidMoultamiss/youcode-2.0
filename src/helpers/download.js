@@ -1,7 +1,8 @@
 export const download = ((User) => {
     const saveData = (data, fileName) => {
         const a = document.createElement("a");
-        blob = new Blob([data], { type: "octet/stream" }),
+        const json = data,
+            blob = new Blob([json], { type: "octet/stream" }),
             url = window.URL.createObjectURL(blob);
         a.href = url;
         a.download = `${fileName}.txt`;

@@ -1,7 +1,7 @@
 export { render } from "./render"
 export { router } from "./route"
 export { goTo } from "./goTo"
-export { get, post, put } from "./Api"
+export { get, post, put, patch } from "./Api"
 export { back } from "./back"
 export { UserObj, QuestionObj } from "./instantiate"
 export { download } from "./download"

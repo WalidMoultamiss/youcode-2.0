@@ -18,7 +18,7 @@ export const post = async (url, body) => {
         method: "POST",
         headers: {
             "Content-type": "application/json",
-          },
+        },
         body: JSON.stringify(body)
     });
     return await response.json()
@@ -30,7 +30,19 @@ export const put = async (url, body) => {
         method: "PUT",
         headers: {
             "Content-type": "application/json",
-          },
+        },
+        body: JSON.stringify(body)
+    });
+    return await response.json()
+}
+
+export const patch = async (url, body) => {
+    url = db + url
+    const response = await fetch(url, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json",
+        },
         body: JSON.stringify(body)
     });
     return await response.json()

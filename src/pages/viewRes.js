@@ -1,37 +1,40 @@
 import { btn } from "../components";
+import { AdminPage } from "../Mout";
 
 export const viewRes = (user) => {
-  window.$ = (selector) => document.querySelector(selector);
+    window.$ = (selector) => document.querySelector(selector);
 
-  window.preInscription = () => {
-    $("#preInscription").style.display = "block";
-    $("#online").style.display = "none";
-  };
-  window.hundelOnline = () => {
-    $("#online").style.display = "block";
-    $("#preInscription").style.display = "none";
-  };
+    window.preInscription = () => {
+        $("#preInscription").style.display = "block";
+        $("#online").style.display = "none";
+    };
+    window.hundelOnline = () => {
+        $("#online").style.display = "block";
+        $("#preInscription").style.display = "none";
+    };
 
-  const getRes = () => {
-    const res = _.viewResStat();
-    const status = res?.status;
-    const questions = res?.testOnline;
-    if (res) {
-      return {
-        status: () => status?.toUpperCase(),
-        questions: () => questions,
-        fullName: () => res.fullName,
-        seriousGame: () => res.seriousGame,
-        motivation: () => res.motivation,
-        technique: () => res.technique,
-      };
-    }
-  };
-  console.log(getRes().fullName());
+    const getRes = () => {
+        const res = _.viewResStat();
+        const status = res?.status;
+        const questions = res?.testOnline;
+        if (res) {
+            return {
+                status: () => status?.toUpperCase(),
+                questions: () => questions,
+                fullName: () => res.fullName,
+                id: () => res.id,
+                seriousGame: () => res.seriousGame,
+                motivation: () => res.motivation,
+                technique: () => res.technique,
+                role: () => res?.role,
+            };
+        }
+    };
 
-  const renderSeriousGame = () => {
-    const seriousGame = getRes().seriousGame();
-    return `
+
+    const renderSeriousGame = () => {
+        const seriousGame = user.seriousGame ? user.seriousGame : getRes().seriousGame();
+        return `
                 <div style="width:428px;" class="mb-3 rounded-lg dark:bg-gray-700 bg-red-50 border-2 ">
                     <div class="flex flex-col text-left">
                         <p class="p-3"><b>Serious game:</b></p>
@@ -40,11 +43,11 @@ export const viewRes = (user) => {
                     </div>
                 </div>
             `;
-  };
+    };
 
-  const renderTechnique = () => {
-    const technique = getRes().technique();
-    return `
+    const renderTechnique = () => {
+        const technique = user.technique ? user.technique : getRes()?.technique();
+        return `
             <div style="width:428px;" class="mb-3 rounded-lg dark:bg-gray-700 bg-red-50 border-2 ">
                 <div class="flex w-full flex-col text-left">
                     <p class="p-3"><b>Test technique:</b></p>
@@ -82,89 +85,108 @@ export const viewRes = (user) => {
                 </div>
             </div>
             `;
-  };
-  const renderMotivation = () => {
-    const motivations = getRes().motivation();
-    let html = [];
-    motivations.map((motivation, idx) => {
-      html.push(`
+    };
+
+    window.updateStatus = async (id, status) => {
+        console.log(id);
+        await _.updateUserStatus(id, status)
+        AdminPage()
+    }
+
+    const adminPower = () => {
+        let id = user.id
+        return id ? (`
+            <div style="width:428px;" class="flex justify-end gap-3">
+                <div onclick="updateStatus(${id},'rejected')">
+                    ${btn('Refuse', 'bg-red-500 p-2 rounded-lg text-white')}
+                </div>
+                <div onclick="updateStatus(${id},'accepted')">
+                    ${btn('Accept', 'bg-green-500 p-2 text-white rounded-lg')}
+                </div>
+            </div>
+        `) : ""
+    }
+
+    const renderMotivation = () => {
+        const motivations = user.motivation ? user.motivation : getRes()?.motivation();
+        let html = [];
+        motivations.map((motivation, idx) => {
+            html.push(`
         <div class="p-3 w-full">
             <p><b>Question ${idx + 1}:</b></p>
-            <textarea class="dark:bg-gray-700 outline-none w-full h-20 p-3 dark:text-white max-w-full">${
-              motivation.text
-            }</textarea>
+            <textarea class="dark:bg-gray-700 outline-none w-full h-20 p-3 dark:text-white max-w-full">${motivation.text
+                }</textarea>
         </div>
         `);
-    });
-    return html.join("<hr/>");
-  };
+        });
+        return html.join("<hr/>");
+    };
 
-  const renderQuestions = () => {
-    const questions = user.testOnline ? user.testOnline : getRes()?.questions();
-    console.log(user);
-    return (
-      questions &&
-      questions
-        .map((question, index) => {
-          return `
+    const isAnswering = () => {
+        return !getRes().seriousGame() && !getRes().role() ? (`
+            <button class="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-lg" onclick="goTo('seriousgame')">
+                Go to next exam
+            </button>
+        `) : ""
+    }
+
+    const renderQuestions = () => {
+        const questions = user.testOnline ? user.testOnline : getRes()?.questions();
+        console.log(user);
+        return (
+            questions &&
+            questions
+                .map((question, index) => {
+                    return `
             <div class="flex gap-3">
                 <div class="flex flex-col items-center">
-                    <div class="px-3 py-1 flex justify-center items-center rounded-full ${
-                      question.isCorrect ? "bg-green-500" : "bg-red-500"
-                    }">${index + 1}</div>
-                    ${
-                      index != 4
-                        ? '<div class="w-0.5 bg-gray-400 h-full"></div>'
-                        : ""
-                    }
+                    <div class="px-3 py-1 flex justify-center items-center rounded-full ${question.isCorrect ? "bg-green-500" : "bg-red-500"
+                        }">${index + 1}</div>
+                    ${index != 4
+                            ? '<div class="w-0.5 bg-gray-400 h-full"></div>'
+                            : ""
+                        }
                 </div>
-                <div class="w-96 p-3 mb-3 rounded-lg dark:bg-gray-700 bg-red-50 border-2 ${
-                  question.isCorrect ? "border-green-500" : "border-red-500"
-                }" key=${index}>
+                <div class="w-96 p-3 mb-3 rounded-lg dark:bg-gray-700 bg-red-50 border-2 ${question.isCorrect ? "border-green-500" : "border-red-500"
+                        }" key=${index}>
                     <div class="text-left">
                         <h3 class="font-bold">Question ${index + 1}:</h3>
                     </div>
                     <div class="flex flex-col text-left">
                         <p>The correct answer is:<b> ${question.correct}</b></p>
-                        ${
-                          question.answer
+                        ${question.answer
                             ? "<p>Your answer is: <b>" +
-                              question.answer +
-                              "</b></p>"
+                            question.answer +
+                            "</b></p>"
                             : "<p><b>You did not answer this question 😥</b></p>"
                         }
                     </div>
                 </div>
             </div>
             `;
-        })
-        .join("")
-    );
-  };
+                })
+                .join("")
+        );
+    };
 
-  return `
+    return `
     <div class="w-full flex flex-col gap-4 h-screen pt-44 overflow-y-scroll py-11 dark:bg-gray-900">
         <h1 class="dark:text-white">
-            ${
-              user.testOnline ? user.fullName : getRes()?.fullName()
-            }, You have been <b>${
-    user.testOnline ? user.status : getRes()?.status()
-  }</b>
+            ${user.testOnline ? user.fullName : getRes()?.fullName()
+        }, You have been <b>${user.testOnline ? user.status : getRes()?.status()
+        }</b>
         </h1>
         <div class="flex flex-col items-center">
-            <div class="w-1/12 flex justify-center items-center ${
-              user.testOnline
-                ? user.status == "rejected" || _.isAuth()?.role == "admin"
-                  ? "hidden"
-                  : ""
-                : getRes()?.status() == "rejected".toUpperCase() ||
-                  _.isAuth()?.role == "admin"
+            <div class="w-1/12 flex justify-center items-center ${user.testOnline
+            ? user.status == "rejected" || _.isAuth()?.role == "admin"
                 ? "hidden"
                 : ""
-            } ">
-                <button class="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-lg" onclick="goTo('seriousgame')">
-                    Go to next exam
-                </button>
+            : getRes()?.status() == "rejected".toUpperCase() ||
+                _.isAuth()?.role == "admin"
+                ? "hidden"
+                : ""
+        } ">
+                ${isAnswering()}
             </div>
         </div>
         <div class="flex w-full gap-3 justify-center">
@@ -189,14 +211,7 @@ export const viewRes = (user) => {
                     </div>
                 </div>
                 ${renderTechnique()}
-                <div style="width:428px;" class="flex justify-end gap-3">
-                    <div>
-                        ${btn('Refuse','bg-red-500 p-2 rounded-lg text-white')}
-                    </div>
-                    <div>
-                        ${btn('Accept','bg-green-500 p-2 text-white rounded-lg')}
-                    </div>
-                </div>
+                ${adminPower()}
             </div>
         </div>
     </div>
