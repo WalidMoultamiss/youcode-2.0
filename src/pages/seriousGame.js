@@ -1,11 +1,13 @@
 export const seriousGame = () => {
-    window.setSerious = async  ()=>{
+    (_.isAuth()).status == 'rejected' ? goTo('viewres') : null
+
+    window.setSerious = async () => {
         const seriousGame = document.getElementById("seriousGame")
         const res = await _.setSeriousGame(seriousGame)
         console.log(res);
         goTo('motivation')
     }
-  return `
+    return `
     <div class="w-full flex flex-col items-center gap-4 h-screen pt-44 overflow-y-scroll py-11 dark:bg-gray-900">
     <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg ">
                 <div class="w-full p-3">
