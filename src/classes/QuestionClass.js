@@ -14,13 +14,13 @@ export class QuestionClass {
     const email = UserObj.user.email;
     let user = await get(`/schema/?email=${email}`);
     user = user[0];
-    UserObj.user.status = 'onReview';
+    UserObj.user.status = 'review';
     let test = [];
     if (user.testOnline.length > 0) {
       test = user.testOnline.find(item => item.isCorrect == false)
     }
     UserObj.user.testOnline = user.testOnline;
-    UserObj.user.status = test?.length === 0 ? 'pending' : test ? 'rejected' :  'onReview';
+    UserObj.user.status = test?.length === 0 ? 'pending' : test ? 'rejected' :  'review';
     await put(`/schema/${UserObj.user.id}`, UserObj.user);
     console.log(UserObj.user.status);
     return UserObj.user.status;

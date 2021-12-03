@@ -39,7 +39,7 @@
         "lang": "python",
         "script": "sd"
       },
-      "status": "onReview",
+      "status": "review",
       "testOnline": [
         {
           "id": "1",
@@ -81,7 +81,7 @@
       "telephone": "qyqo@mailinator.com",
       "password": "TCZ5SZMQ",
       "dateOfBirth": "",
-      "role":"admin",
+      "role": "admin",
       "seriousGame": "",
       "motivation": [],
       "technique": {
@@ -133,11 +133,7 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "C++",
-      "incorrect_answers": [
-        "Python",
-        "C",
-        "Rust"
-      ]
+      "incorrect_answers": ["Python", "C", "Rust"]
     },
     {
       "id": "2",
@@ -147,11 +143,7 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "Java",
-      "incorrect_answers": [
-        "Python",
-        "C",
-        "C++"
-      ]
+      "incorrect_answers": ["Python", "C", "C++"]
     },
     {
       "id": "3",
@@ -161,11 +153,7 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "HTML",
-      "incorrect_answers": [
-        "Python",
-        "C",
-        "C++"
-      ]
+      "incorrect_answers": ["Python", "C", "C++"]
     },
     {
       "id": "4",
@@ -175,11 +163,7 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "C++",
-      "incorrect_answers": [
-        "Python",
-        "C",
-        "Go"
-      ]
+      "incorrect_answers": ["Python", "C", "Go"]
     },
     {
       "id": "5",
@@ -189,11 +173,7 @@
       "difficulty": "easy",
       "type": "multiple",
       "correct_answer": "HTML",
-      "incorrect_answers": [
-        "Python",
-        "C",
-        "C++"
-      ]
+      "incorrect_answers": ["Python", "C", "C++"]
     }
   ]
 }
