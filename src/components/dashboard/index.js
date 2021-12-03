@@ -5,6 +5,7 @@ export const UserDashboard = (users) => {
             accepted: "bg-green-100 text-green-800",
             pending: "bg-gray-100 text-gray-800",
             rejected: "bg-pink-100 text-pink-800",
+            onReview: "bg-purple-100 text-purple-800",
         }
 
 
