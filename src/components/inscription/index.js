@@ -8,17 +8,35 @@ export const inscription = () => {
   const btnReset = document.querySelector("#btnReset");
   const btnClose = document.querySelector("#btnClose");
 
+  //check age between 18 and 35 yo
+  const checkAge = (e) => {
+    const age = document.querySelector("#age");
+    const ageValue = age.value;
+    if (ageValue < 18 || ageValue > 35) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+
   //check IF EMAIL is not register
   window.checkEmail = async () => {
-    const email = document.querySelector("#email");
-    const emailValue = email.value;
-    const response = await get("/schema?email=" + emailValue);
-
-    if (response.length > 0) {
-      console.log("email exist");
-      document.querySelector("#inscr-popup").style.display = "flex";
-    } else {
-      addUser();
+    if(checkAge()){
+      const email = document.querySelector("#email");
+      const emailValue = email.value;
+      const response = await get("/schema?email=" + emailValue);
+      if (response.length > 0) {
+        console.log("email exist");
+        document.querySelector("#inscr-popup").style.display = "flex";
+      } else if(checkAge()) {
+        document.querySelector("#popup_age").style.display = "flex";
+        
+      }else{
+        addUser();
+      }
+    }else{
+      document.querySelector("#popup_age").style.display = "flex";
     }
   };
 
@@ -98,6 +116,10 @@ export const inscription = () => {
                         <label for="email" class="text-sm dark:text-white text-gray-700">Email address</label>
                         <input type="email" id="email" class="form-control p-2 shadow-md w-full rounded-md outline-none"  required>
                     </div>
+                    <div class="flex flex-col items-start" id="age" >
+                        <label for="age" class="text-sm dark:text-white text-gray-700">Age</label>
+                        <input type="number" id="age" class="form-control p-2 shadow-md w-full rounded-md outline-none"  required>
+                    </div>
                     <div class="flex gap-3" >
                     <div class="flex w-1/3 flex-col items-start" id="emailAdress" >
                         <label for="cin" class="text-sm dark:text-white text-gray-700">CIN</label>
@@ -118,5 +140,6 @@ export const inscription = () => {
             ${popup("user already registered", "inscr-popup")}
             ${popup("user created", "popup_submited")}
             ${popup("Please fill out the fields", "popup_error")}
+            ${popup("Age not accepted", "popup_age")}
             `;
 };
