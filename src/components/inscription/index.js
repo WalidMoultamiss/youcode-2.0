@@ -12,31 +12,28 @@ export const inscription = () => {
   const checkAge = (e) => {
     const age = document.querySelector("#age");
     const ageValue = age.value;
-    if (ageValue < 18 || ageValue > 35) {
+    if (ageValue >= 18 && ageValue <= 35) {
       return true;
     } else {
       return false;
     }
   };
 
-
   //check IF EMAIL is not register
   window.checkEmail = async () => {
-    if(checkAge()){
+    if (!checkAge()) {
+      document.querySelector("#popup_age").style.display = "flex";
+    } else {
       const email = document.querySelector("#email");
       const emailValue = email.value;
       const response = await get("/schema?email=" + emailValue);
+
       if (response.length > 0) {
-        console.log("email exist");
         document.querySelector("#inscr-popup").style.display = "flex";
-      } else if(checkAge()) {
-        document.querySelector("#popup_age").style.display = "flex";
-        
-      }else{
+        console.log("email exist");
+      } else {
         addUser();
       }
-    }else{
-      document.querySelector("#popup_age").style.display = "flex";
     }
   };
 
@@ -116,7 +113,7 @@ export const inscription = () => {
                         <label for="email" class="text-sm dark:text-white text-gray-700">Email address</label>
                         <input type="email" id="email" class="form-control p-2 shadow-md w-full rounded-md outline-none"  required>
                     </div>
-                    <div class="flex flex-col items-start" id="age" >
+                    <div class="flex flex-col items-start" >
                         <label for="age" class="text-sm dark:text-white text-gray-700">Age</label>
                         <input type="number" id="age" class="form-control p-2 shadow-md w-full rounded-md outline-none"  required>
                     </div>
